@@ -1,0 +1,7 @@
+simulation: talentmatch-llm
+routing: path
+mocks:
+  - name: llm
+    routeKey: llm
+    origin: llm.test.invalid
+    path: postman/mocks/llm

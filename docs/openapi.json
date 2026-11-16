@@ -1,0 +1,810 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TalentMatch AI",
+    "description": "Apoio à análise com revisão humana. Sem ranking ou rejeição automática.",
+    "version": "2.0.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/analyze": {
+      "post": {
+        "summary": "Analyze Resume",
+        "description": "ML real; mode=demo simula só o LLM. Falha do LLM retorna ML com llm=null e llm_error.\n\nEnvie arquivo OU texto. Até 5 MB, PDF textual sem senha (30 páginas) ou TXT UTF-8.",
+        "operationId": "analyze_resume_api_analyze_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_analyze_resume_api_analyze_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalysisResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Tamanho excedido"
+          },
+          "415": {
+            "description": "Formato inválido"
+          },
+          "422": {
+            "description": "Entrada inválida"
+          },
+          "503": {
+            "description": "Classificador indisponível"
+          }
+        }
+      }
+    },
+    "/api/compare": {
+      "post": {
+        "summary": "Compare",
+        "operationId": "compare_api_compare_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_compare_api_compare_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Tamanho excedido"
+          },
+          "415": {
+            "description": "Formato inválido"
+          },
+          "422": {
+            "description": "Entrada inválida"
+          },
+          "503": {
+            "description": "Classificador indisponível"
+          }
+        }
+      }
+    },
+    "/api/models/metrics": {
+      "get": {
+        "summary": "Model Metrics",
+        "operationId": "model_metrics_api_models_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/models/categories": {
+      "get": {
+        "summary": "Model Categories",
+        "operationId": "model_categories_api_models_categories_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/models/confusion-matrix": {
+      "get": {
+        "summary": "Confusion Matrix",
+        "operationId": "confusion_matrix_api_models_confusion_matrix_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              },
+              "image/png": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalysisResponse": {
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "title": "Candidate Id"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "live",
+              "demo"
+            ],
+            "title": "Mode"
+          },
+          "ml": {
+            "$ref": "#/components/schemas/MLResult"
+          },
+          "llm": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LLMAnalysis"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "llm_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Llm Error"
+          },
+          "llm_diagnostic": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Llm Diagnostic"
+          },
+          "cobertura_requisitos": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RequirementCoverage"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "privacy": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Privacy"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "candidate_id",
+          "mode",
+          "ml",
+          "llm",
+          "warnings",
+          "privacy"
+        ],
+        "title": "AnalysisResponse"
+      },
+      "Body_analyze_resume_api_analyze_post": {
+        "properties": {
+          "job_description": {
+            "type": "string",
+            "maxLength": 16000,
+            "minLength": 1,
+            "title": "Job Description"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "live",
+              "demo"
+            ],
+            "title": "Mode",
+            "default": "live"
+          },
+          "resume_text": {
+            "type": "string",
+            "maxLength": 40000,
+            "title": "Resume Text",
+            "default": ""
+          },
+          "file": {
+            "anyOf": [
+              {
+                "type": "string",
+                "contentMediaType": "application/octet-stream"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "job_description"
+        ],
+        "title": "Body_analyze_resume_api_analyze_post"
+      },
+      "Body_compare_api_compare_post": {
+        "properties": {
+          "job_description": {
+            "type": "string",
+            "maxLength": 16000,
+            "minLength": 1,
+            "title": "Job Description"
+          },
+          "files": {
+            "items": {
+              "type": "string",
+              "contentMediaType": "application/octet-stream"
+            },
+            "type": "array",
+            "title": "Files"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "live",
+              "demo"
+            ],
+            "title": "Mode",
+            "default": "live"
+          }
+        },
+        "type": "object",
+        "required": [
+          "job_description",
+          "files"
+        ],
+        "title": "Body_compare_api_compare_post"
+      },
+      "CategoryProbability": {
+        "properties": {
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "category",
+          "probability"
+        ],
+        "title": "CategoryProbability"
+      },
+      "ComparisonResponse": {
+        "properties": {
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/AnalysisResponse"
+            },
+            "type": "array",
+            "title": "Results"
+          },
+          "failures": {
+            "items": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Failures"
+          },
+          "notice": {
+            "type": "string",
+            "title": "Notice",
+            "default": "Ordem de envio preservada. Não há ranking nem rejeição automática."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "results",
+          "failures"
+        ],
+        "title": "ComparisonResponse"
+      },
+      "Evidence": {
+        "properties": {
+          "requisito": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Requisito"
+          },
+          "evidencia": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Evidencia"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "requisito",
+          "evidencia"
+        ],
+        "title": "Evidence"
+      },
+      "LLMAnalysis": {
+        "properties": {
+          "resumo": {
+            "type": "string",
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Resumo"
+          },
+          "habilidades": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "title": "Habilidades"
+          },
+          "anos_experiencia": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 80.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anos Experiencia"
+          },
+          "experiencia_profissional": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Experiencia Profissional"
+          },
+          "nota_aderencia": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nota Aderencia"
+          },
+          "requisitos_atendidos": {
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Requisitos Atendidos"
+          },
+          "requisitos_sem_evidencia": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Requisitos Sem Evidencia"
+          },
+          "pontos_fortes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Pontos Fortes"
+          },
+          "lacunas": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 30,
+            "title": "Lacunas"
+          },
+          "justificativa": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Justificativa"
+          },
+          "abstention_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abstention Reason"
+          },
+          "ml_context_included": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ml Context Included"
+          },
+          "perfil_profissional": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProfessionalProfile"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "resumo",
+          "habilidades",
+          "nota_aderencia",
+          "pontos_fortes",
+          "lacunas",
+          "justificativa"
+        ],
+        "title": "LLMAnalysis"
+      },
+      "MLCoverage": {
+        "properties": {
+          "active_features": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Active Features"
+          },
+          "analyzed_unigrams": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Analyzed Unigrams"
+          },
+          "known_unigrams": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Known Unigrams"
+          },
+          "unknown_unigrams": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Unknown Unigrams"
+          },
+          "unigram_coverage": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unigram Coverage"
+          },
+          "zero_vector": {
+            "type": "boolean",
+            "title": "Zero Vector"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "active_features",
+          "analyzed_unigrams",
+          "known_unigrams",
+          "unknown_unigrams",
+          "unigram_coverage",
+          "zero_vector"
+        ],
+        "title": "MLCoverage"
+      },
+      "MLResult": {
+        "properties": {
+          "predicted_area": {
+            "type": "string",
+            "title": "Predicted Area"
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name"
+          },
+          "top_categories": {
+            "items": {
+              "$ref": "#/components/schemas/CategoryProbability"
+            },
+            "type": "array",
+            "title": "Top Categories"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "predicted",
+              "abstained"
+            ],
+            "title": "Status",
+            "default": "predicted"
+          },
+          "coverage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MLCoverage"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "predicted_area",
+          "model_name",
+          "top_categories"
+        ],
+        "title": "MLResult"
+      },
+      "ProfessionalProfile": {
+        "properties": {
+          "descricao": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 3,
+            "title": "Descricao"
+          },
+          "evidencia": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Evidencia"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "descricao",
+          "evidencia"
+        ],
+        "title": "ProfessionalProfile"
+      },
+      "RequirementCoverage": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "calculada",
+              "indeterminada"
+            ],
+            "title": "Status",
+            "default": "indeterminada"
+          },
+          "lista_completa": {
+            "type": "boolean",
+            "title": "Lista Completa",
+            "default": false
+          },
+          "requisitos": {
+            "items": {
+              "$ref": "#/components/schemas/RequirementCoverageItem"
+            },
+            "type": "array",
+            "title": "Requisitos"
+          },
+          "com_evidencia": {
+            "type": "integer",
+            "title": "Com Evidencia",
+            "default": 0
+          },
+          "sem_evidencia": {
+            "type": "integer",
+            "title": "Sem Evidencia",
+            "default": 0
+          },
+          "indeterminados": {
+            "type": "integer",
+            "title": "Indeterminados",
+            "default": 0
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total",
+            "default": 0
+          },
+          "percentual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percentual"
+          },
+          "motivos": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Motivos"
+          },
+          "formula": {
+            "type": "string",
+            "title": "Formula",
+            "default": "requisitos distintos com evidências verificadas / requisitos distintos avaliados × 100"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "RequirementCoverage"
+      },
+      "RequirementCoverageItem": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "texto": {
+            "type": "string",
+            "title": "Texto"
+          },
+          "componentes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Componentes"
+          },
+          "referencias_vaga": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Referencias Vaga"
+          },
+          "estado": {
+            "type": "string",
+            "enum": [
+              "evidencia_verificada",
+              "sem_evidencia_suficiente",
+              "indeterminado"
+            ],
+            "title": "Estado",
+            "default": "indeterminado"
+          },
+          "evidencias": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidencias"
+          },
+          "motivo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Motivo"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "texto",
+          "componentes",
+          "referencias_vaga"
+        ],
+        "title": "RequirementCoverageItem"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# Chaves e configuracoes privadas
+.env
+.env.*
+!.env.example
+
+# Arquivos temporarios Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Dataset: baixar separadamente conforme o README
+data/
+
+# Modelo treinado: recriar com train.py
+
+# Arquivos compactados
+*.zip
+frontend/node_modules/
+frontend/dist/
+frontend/playwright-report/
+frontend/test-results/
+.pytest_cache/
+artifacts/
+*.log
+frontend/*.tsbuildinfo

@@ -1,0 +1,3 @@
+EXEMPLO FICTÍCIO A — SOMENTE PARA DEMONSTRAÇÃO
+Data analyst using Python, SQL and Power BI for reporting. Three years of retail
+analytics projects, dashboards and data quality checks. Uses pandas and Git.

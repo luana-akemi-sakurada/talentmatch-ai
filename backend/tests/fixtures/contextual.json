@@ -1,0 +1,31 @@
+{
+  "resume": "Sou Desenvolvedora Backend Java.\nDesenvolvi APIs REST com Java e Spring Boot.\nUtilizei Git, Docker e PostgreSQL.\nColaborei com equipes em projetos.",
+  "job": "Buscamos Java, Spring Boot, APIs REST e PostgreSQL.\nDesejável AWS e comunicação com equipes.",
+  "provider": {
+    "habilidades": [
+      {
+        "habilidade": "Java",
+        "evidencia": "Desenvolvi APIs REST com Java e Spring Boot."
+      }
+    ],
+    "experiencia_profissional": [
+      "Desenvolvi APIs REST com Java e Spring Boot."
+    ],
+    "anos_experiencia": null,
+    "evidencia_anos_experiencia": null,
+    "requisitos_atendidos": [
+      {
+        "requisito": "Java",
+        "evidencia": "Desenvolvi APIs REST com Java e Spring Boot."
+      }
+    ],
+    "requisitos_sem_evidencia": [
+      "AWS"
+    ],
+    "nota_aderencia": null,
+    "perfil_profissional": {
+      "descricao": "Desenvolvedora Backend Java",
+      "evidencia": "Sou Desenvolvedora Backend Java."
+    }
+  }
+}

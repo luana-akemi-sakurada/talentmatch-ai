@@ -1,0 +1,3427 @@
+{
+  "method": "Todos os textos são fictícios, definidos para diagnóstico, sem representatividade estatística. Variantes de software mantêm o mesmo conjunto técnico e dois anos de experiência.",
+  "input_sha256": "9a7ef482a22f6bf8d21a92d89d2094f0ac494c9adcf83a450b01d430b386e4de",
+  "python": "3.14.5",
+  "sklearn": "1.9.1",
+  "model_type": "RandomForestClassifier",
+  "n_classes": 24,
+  "n_estimators": 300,
+  "vectorizer": {
+    "max_features": 8000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "stop_words": "english",
+    "sublinear_tf": true,
+    "token_pattern": "(?u)\\b\\w\\w+\\b",
+    "norm": "l2"
+  },
+  "vocabulary_size": 8000,
+  "class_weight": null,
+  "dataset_present": false,
+  "training_rows_internal": 1985,
+  "bootstrap_root_proportions_mean": {
+    "ACCOUNTANT": 0.04737363560033587,
+    "ADVOCATE": 0.04725104953820318,
+    "AGRICULTURE": 0.025326616288832912,
+    "APPAREL": 0.03936188077246004,
+    "ARTS": 0.041568429890847906,
+    "AUTOMOBILE": 0.014391267842149462,
+    "AVIATION": 0.047069689336691874,
+    "BANKING": 0.04647523089840471,
+    "BPO": 0.009036104114189742,
+    "BUSINESS-DEVELOPMENT": 0.04787237615449205,
+    "CHEF": 0.04765407220822841,
+    "CONSTRUCTION": 0.04550125944584379,
+    "CONSULTANT": 0.04654072208228376,
+    "DESIGNER": 0.0434172963895885,
+    "DIGITAL-MEDIA": 0.03885642317380343,
+    "ENGINEERING": 0.047247691015953,
+    "FINANCE": 0.04676070528967256,
+    "FITNESS": 0.04654743912678423,
+    "HEALTHCARE": 0.046278757346767445,
+    "HR": 0.044055415617128384,
+    "INFORMATION-TECHNOLOGY": 0.04831402183039467,
+    "PUBLIC-RELATIONS": 0.04489672544080598,
+    "SALES": 0.046772460117548265,
+    "TEACHER": 0.04143073047858932
+  },
+  "root_weighted_samples": [
+    1985.0
+  ],
+  "global_impurity_importance_top20": [
+    {
+      "feature": "designer",
+      "importance": 0.007674177754447968
+    },
+    {
+      "feature": "advocate",
+      "importance": 0.007439025526200016
+    },
+    {
+      "feature": "construction",
+      "importance": 0.007138451160519774
+    },
+    {
+      "feature": "aviation",
+      "importance": 0.00680316752705372
+    },
+    {
+      "feature": "business development",
+      "importance": 0.006574707969538089
+    },
+    {
+      "feature": "engineering",
+      "importance": 0.006476121032021568
+    },
+    {
+      "feature": "accountant",
+      "importance": 0.006076507103387087
+    },
+    {
+      "feature": "fitness",
+      "importance": 0.006023373735090974
+    },
+    {
+      "feature": "information technology",
+      "importance": 0.0056025327942703426
+    },
+    {
+      "feature": "healthcare",
+      "importance": 0.005524358831170482
+    },
+    {
+      "feature": "hr",
+      "importance": 0.005171907833132083
+    },
+    {
+      "feature": "chef",
+      "importance": 0.005006611054753341
+    },
+    {
+      "feature": "finance",
+      "importance": 0.004990444252622806
+    },
+    {
+      "feature": "teacher",
+      "importance": 0.004965118526801474
+    },
+    {
+      "feature": "aircraft",
+      "importance": 0.004889369063094122
+    },
+    {
+      "feature": "consultant",
+      "importance": 0.0048394409694715364
+    },
+    {
+      "feature": "banking",
+      "importance": 0.004425414604633648
+    },
+    {
+      "feature": "experience sales",
+      "importance": 0.004408081021331009
+    },
+    {
+      "feature": "sales",
+      "importance": 0.004276482713708794
+    },
+    {
+      "feature": "public relations",
+      "importance": 0.004089517865856066
+    }
+  ],
+  "technical_term_probes": [
+    {
+      "term": "Java",
+      "cleaned": "java",
+      "analyzed_terms": [
+        "java"
+      ],
+      "known_terms": [
+        "java"
+      ],
+      "missing_terms": []
+    },
+    {
+      "term": "Spring Boot",
+      "cleaned": "spring boot",
+      "analyzed_terms": [
+        "spring",
+        "boot",
+        "spring boot"
+      ],
+      "known_terms": [
+        "spring"
+      ],
+      "missing_terms": [
+        "boot",
+        "spring boot"
+      ]
+    },
+    {
+      "term": "PostgreSQL",
+      "cleaned": "postgresql",
+      "analyzed_terms": [
+        "postgresql"
+      ],
+      "known_terms": [],
+      "missing_terms": [
+        "postgresql"
+      ]
+    },
+    {
+      "term": "APIs REST",
+      "cleaned": "apis rest",
+      "analyzed_terms": [
+        "apis",
+        "rest",
+        "apis rest"
+      ],
+      "known_terms": [
+        "rest"
+      ],
+      "missing_terms": [
+        "apis",
+        "apis rest"
+      ]
+    },
+    {
+      "term": "Git",
+      "cleaned": "git",
+      "analyzed_terms": [
+        "git"
+      ],
+      "known_terms": [],
+      "missing_terms": [
+        "git"
+      ]
+    },
+    {
+      "term": "JUnit",
+      "cleaned": "junit",
+      "analyzed_terms": [
+        "junit"
+      ],
+      "known_terms": [],
+      "missing_terms": [
+        "junit"
+      ]
+    },
+    {
+      "term": "Docker",
+      "cleaned": "docker",
+      "analyzed_terms": [
+        "docker"
+      ],
+      "known_terms": [],
+      "missing_terms": [
+        "docker"
+      ]
+    },
+    {
+      "term": "C++",
+      "cleaned": "c++",
+      "analyzed_terms": [],
+      "known_terms": [],
+      "missing_terms": []
+    },
+    {
+      "term": "C#",
+      "cleaned": "c#",
+      "analyzed_terms": [],
+      "known_terms": [],
+      "missing_terms": []
+    },
+    {
+      "term": ".NET",
+      "cleaned": ".net",
+      "analyzed_terms": [
+        "net"
+      ],
+      "known_terms": [
+        "net"
+      ],
+      "missing_terms": []
+    },
+    {
+      "term": "dois anos",
+      "cleaned": "dois anos",
+      "analyzed_terms": [
+        "dois",
+        "anos",
+        "dois anos"
+      ],
+      "known_terms": [],
+      "missing_terms": [
+        "dois",
+        "anos",
+        "dois anos"
+      ]
+    },
+    {
+      "term": "two years",
+      "cleaned": "two years",
+      "analyzed_terms": [
+        "years"
+      ],
+      "known_terms": [
+        "years"
+      ],
+      "missing_terms": []
+    },
+    {
+      "term": "2 years",
+      "cleaned": "years",
+      "analyzed_terms": [
+        "years"
+      ],
+      "known_terms": [
+        "years"
+      ],
+      "missing_terms": []
+    }
+  ],
+  "job": "Buscamos pessoa desenvolvedora Java para atuar com Spring Boot, APIs REST, PostgreSQL e Git. São desejáveis conhecimentos em Angular, AWS, Docker, testes automatizados e metodologias ágeis.",
+  "original_demo_result": {
+    "resumo": "DEMONSTRAÇÃO SIMULADA: correspondência literal de um vocabulário limitado; não houve chamada a um LLM.",
+    "habilidades": [
+      "Java",
+      "Docker",
+      "Git"
+    ],
+    "anos_experiencia": null,
+    "experiencia_profissional": [],
+    "nota_aderencia": 75,
+    "requisitos_atendidos": [
+      {
+        "requisito": "Java",
+        "evidencia": "Java"
+      },
+      {
+        "requisito": "Docker",
+        "evidencia": "Docker"
+      },
+      {
+        "requisito": "Git",
+        "evidencia": "Git"
+      }
+    ],
+    "requisitos_sem_evidencia": [
+      "AWS"
+    ],
+    "pontos_fortes": [
+      "Menção literal a Java.",
+      "Menção literal a Docker.",
+      "Menção literal a Git."
+    ],
+    "lacunas": [
+      "AWS: sem menção literal localizada nesta simulação."
+    ],
+    "justificativa": "Indicador ilustrativo = termos da vaga encontrados / termos reconhecidos na vaga. Se nenhum termo for reconhecido, o indicador é zero e não é interpretável. Não avalia experiência, contexto ou competência. O classificador ML acima usa o modelo real.",
+    "perguntas_entrevista": [
+      "Que projeto demonstra as competências exigidas pela vaga?",
+      "Quais experiências não ficaram claras no currículo?"
+    ]
+  },
+  "results": [
+    {
+      "id": "software-short-pt",
+      "area": "software",
+      "language": "pt",
+      "detail": "short",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Desenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.",
+      "control": false,
+      "words": 30,
+      "characters": 213,
+      "minimized_text": "Desenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.",
+      "cleaned_text_at_tfidf": "desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.58
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06333333333333334
+        },
+        {
+          "category": "CONSULTANT",
+          "probability": 0.03666666666666667
+        }
+      ],
+      "expected_probability": 0.02,
+      "it_probability": 0.02,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.013333333333333334,
+        "AGRICULTURE": 0.016666666666666666,
+        "APPAREL": 0.02666666666666667,
+        "ARTS": 0.03333333333333333,
+        "AUTOMOBILE": 0.013333333333333334,
+        "AVIATION": 0.06333333333333334,
+        "BANKING": 0.02,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.58,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.023333333333333334,
+        "CONSULTANT": 0.03666666666666667,
+        "DESIGNER": 0.006666666666666667,
+        "DIGITAL-MEDIA": 0.013333333333333334,
+        "ENGINEERING": 0.03333333333333333,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.006666666666666667,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.02,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 5,
+      "analyzed_unique_unigrams": 22,
+      "known_unique_unigrams": 5,
+      "unigram_coverage": 0.22727272727272727,
+      "unknown_unigrams": [
+        "anos",
+        "apis",
+        "boot",
+        "desenvolvedora",
+        "desenvolvimento",
+        "docker",
+        "dois",
+        "em",
+        "empresariais",
+        "experiência",
+        "git",
+        "junit",
+        "participação",
+        "postgresql",
+        "sistemas",
+        "testes",
+        "unitários"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "com",
+          "weight": 0.5957397473934888
+        },
+        {
+          "feature": "rest",
+          "weight": 0.5064756519804321
+        },
+        {
+          "feature": "java",
+          "weight": 0.42398199004102605
+        },
+        {
+          "feature": "spring",
+          "weight": 0.4150011030981908
+        },
+        {
+          "feature": "software",
+          "weight": 0.19128492850895143
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 24,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "software-short-en",
+      "area": "software",
+      "language": "en",
+      "detail": "short",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Software developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.",
+      "control": false,
+      "words": 30,
+      "characters": 201,
+      "minimized_text": "Software developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.",
+      "cleaned_text_at_tfidf": "software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.38666666666666666
+        },
+        {
+          "category": "ENGINEERING",
+          "probability": 0.09
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.08
+        }
+      ],
+      "expected_probability": 0.06666666666666667,
+      "it_probability": 0.06666666666666667,
+      "probabilities": {
+        "ACCOUNTANT": 0.016666666666666666,
+        "ADVOCATE": 0.013333333333333334,
+        "AGRICULTURE": 0.05,
+        "APPAREL": 0.04,
+        "ARTS": 0.02666666666666667,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.08,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.38666666666666666,
+        "CHEF": 0.01,
+        "CONSTRUCTION": 0.016666666666666666,
+        "CONSULTANT": 0.04666666666666667,
+        "DESIGNER": 0.016666666666666666,
+        "DIGITAL-MEDIA": 0.006666666666666667,
+        "ENGINEERING": 0.09,
+        "FINANCE": 0.01,
+        "FITNESS": 0.016666666666666666,
+        "HEALTHCARE": 0.02,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.06666666666666667,
+        "PUBLIC-RELATIONS": 0.006666666666666667,
+        "SALES": 0.02,
+        "TEACHER": 0.016666666666666666
+      },
+      "active_features": 14,
+      "analyzed_unique_unigrams": 19,
+      "known_unique_unigrams": 13,
+      "unigram_coverage": 0.6842105263157895,
+      "unknown_unigrams": [
+        "apis",
+        "boot",
+        "docker",
+        "git",
+        "junit",
+        "postgresql"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "rest",
+          "weight": 0.429357816689419
+        },
+        {
+          "feature": "java",
+          "weight": 0.35942494145144643
+        },
+        {
+          "feature": "spring",
+          "weight": 0.3518115172036423
+        },
+        {
+          "feature": "developer",
+          "weight": 0.32974426100418297
+        },
+        {
+          "feature": "participation",
+          "weight": 0.31396538910059485
+        },
+        {
+          "feature": "tests",
+          "weight": 0.29060929413188447
+        },
+        {
+          "feature": "enterprise",
+          "weight": 0.26991156317066045
+        },
+        {
+          "feature": "unit",
+          "weight": 0.23637343057155216
+        },
+        {
+          "feature": "years experience",
+          "weight": 0.20748365256570445
+        },
+        {
+          "feature": "software",
+          "weight": 0.162159185637157
+        },
+        {
+          "feature": "systems",
+          "weight": 0.14301584672728168
+        },
+        {
+          "feature": "experience",
+          "weight": 0.13989097042710194
+        },
+        {
+          "feature": "years",
+          "weight": 0.13679267328300723
+        },
+        {
+          "feature": "development",
+          "weight": 0.11886950134959394
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 129,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "software-medium-pt",
+      "area": "software",
+      "language": "pt",
+      "detail": "medium",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. Utiliza Java e Spring Boot para implementar funcionalidades e APIs REST. Trabalha com PostgreSQL para consultar e persistir os dados utilizados pelos sistemas. Utiliza Git para registrar alterações e colaborar na revisão do código. Escreve testes unitários com JUnit e utiliza Docker para executar os sistemas em ambientes consistentes. Suas responsabilidades incluem compreender solicitações dos usuários, implementar alterações no software, investigar defeitos e verificar o comportamento das funcionalidades. Participa da manutenção de módulos existentes e acompanha a integração entre as APIs REST e os dados em PostgreSQL.",
+      "control": false,
+      "words": 103,
+      "characters": 744,
+      "minimized_text": "Desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. Utiliza Java e Spring Boot para implementar funcionalidades e APIs REST. Trabalha com PostgreSQL para consultar e persistir os dados utilizados pelos sistemas. Utiliza Git para registrar alterações e colaborar na revisão do código. Escreve testes unitários com JUnit e utiliza Docker para executar os sistemas em ambientes consistentes. Suas responsabilidades incluem compreender solicitações dos usuários, implementar alterações no software, investigar defeitos e verificar o comportamento das funcionalidades. Participa da manutenção de módulos existentes e acompanha a integração entre as APIs REST e os dados em PostgreSQL.",
+      "cleaned_text_at_tfidf": "desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. utiliza java e spring boot para implementar funcionalidades e apis rest. trabalha com postgresql para consultar e persistir os dados utilizados pelos sistemas. utiliza git para registrar alterações e colaborar na revisão do código. escreve testes unitários com junit e utiliza docker para executar os sistemas em ambientes consistentes. suas responsabilidades incluem compreender solicitações dos usuários implementar alterações no software investigar defeitos e verificar o comportamento das funcionalidades. participa da manutenção de módulos existentes e acompanha a integração entre as apis rest e os dados em postgresql.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.58
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06333333333333334
+        },
+        {
+          "category": "CONSULTANT",
+          "probability": 0.04
+        }
+      ],
+      "expected_probability": 0.02,
+      "it_probability": 0.02,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.013333333333333334,
+        "AGRICULTURE": 0.016666666666666666,
+        "APPAREL": 0.023333333333333334,
+        "ARTS": 0.03333333333333333,
+        "AUTOMOBILE": 0.013333333333333334,
+        "AVIATION": 0.06333333333333334,
+        "BANKING": 0.02,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.58,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.023333333333333334,
+        "CONSULTANT": 0.04,
+        "DESIGNER": 0.006666666666666667,
+        "DIGITAL-MEDIA": 0.013333333333333334,
+        "ENGINEERING": 0.03333333333333333,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.006666666666666667,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.02,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 7,
+      "analyzed_unique_unigrams": 62,
+      "known_unique_unigrams": 7,
+      "unigram_coverage": 0.11290322580645161,
+      "unknown_unigrams": [
+        "acompanha",
+        "alterações",
+        "ambientes",
+        "anos",
+        "apis",
+        "boot",
+        "colaborar",
+        "comportamento",
+        "compreender",
+        "consistentes",
+        "consultar",
+        "código",
+        "da",
+        "dados",
+        "das",
+        "defeitos",
+        "desenvolvedora",
+        "desenvolvimento",
+        "docker",
+        "dois",
+        "em",
+        "empresariais",
+        "entre",
+        "escreve",
+        "executar",
+        "existentes",
+        "experiência",
+        "funcionalidades",
+        "git",
+        "implementar",
+        "incluem",
+        "integração",
+        "investigar",
+        "junit",
+        "manutenção",
+        "módulos",
+        "na",
+        "para",
+        "participa",
+        "pelos",
+        "persistir",
+        "postgresql",
+        "registrar",
+        "responsabilidades",
+        "revisão",
+        "sistemas",
+        "solicitações",
+        "suas",
+        "testes",
+        "trabalha",
+        "unitários",
+        "usuários",
+        "utiliza",
+        "utilizados",
+        "verificar"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "os",
+          "weight": 0.5370584344378592
+        },
+        {
+          "feature": "rest",
+          "weight": 0.5117671292550892
+        },
+        {
+          "feature": "com",
+          "weight": 0.4406696905705366
+        },
+        {
+          "feature": "dos",
+          "weight": 0.3045534950688389
+        },
+        {
+          "feature": "java",
+          "weight": 0.25302679402448575
+        },
+        {
+          "feature": "spring",
+          "weight": 0.2476671205383028
+        },
+        {
+          "feature": "software",
+          "weight": 0.19328340533252958
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 25,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "software-medium-en",
+      "area": "software",
+      "language": "en",
+      "detail": "medium",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Software developer with two years of experience developing and maintaining enterprise systems. Uses Java and Spring Boot to implement features and REST APIs. Works with PostgreSQL to query and persist data used by the systems. Uses Git to record changes and collaborate on code reviews. Writes unit tests with JUnit and uses Docker to run systems in consistent environments. Responsibilities include understanding user requests, implementing software changes, investigating defects and checking feature behavior. Participates in maintaining existing modules and follows the integration between REST APIs and data in PostgreSQL.",
+      "control": false,
+      "words": 89,
+      "characters": 627,
+      "minimized_text": "Software developer with two years of experience developing and maintaining enterprise systems. Uses Java and Spring Boot to implement features and REST APIs. Works with PostgreSQL to query and persist data used by the systems. Uses Git to record changes and collaborate on code reviews. Writes unit tests with JUnit and uses Docker to run systems in consistent environments. Responsibilities include understanding user requests, implementing software changes, investigating defects and checking feature behavior. Participates in maintaining existing modules and follows the integration between REST APIs and data in PostgreSQL.",
+      "cleaned_text_at_tfidf": "software developer with two years of experience developing and maintaining enterprise systems. uses java and spring boot to implement features and rest apis. works with postgresql to query and persist data used by the systems. uses git to record changes and collaborate on code reviews. writes unit tests with junit and uses docker to run systems in consistent environments. responsibilities include understanding user requests implementing software changes investigating defects and checking feature behavior. participates in maintaining existing modules and follows the integration between rest apis and data in postgresql.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.25666666666666665
+        },
+        {
+          "category": "INFORMATION-TECHNOLOGY",
+          "probability": 0.11333333333333333
+        },
+        {
+          "category": "CONSULTANT",
+          "probability": 0.07666666666666666
+        }
+      ],
+      "expected_probability": 0.11333333333333333,
+      "it_probability": 0.11333333333333333,
+      "probabilities": {
+        "ACCOUNTANT": 0.01,
+        "ADVOCATE": 0.03333333333333333,
+        "AGRICULTURE": 0.06666666666666667,
+        "APPAREL": 0.02666666666666667,
+        "ARTS": 0.02666666666666667,
+        "AUTOMOBILE": 0.02666666666666667,
+        "AVIATION": 0.06,
+        "BANKING": 0.03666666666666667,
+        "BPO": 0.023333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.25666666666666665,
+        "CHEF": 0.01,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.07666666666666666,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.02,
+        "ENGINEERING": 0.06666666666666667,
+        "FINANCE": 0.01,
+        "FITNESS": 0.01,
+        "HEALTHCARE": 0.03333333333333333,
+        "HR": 0.013333333333333334,
+        "INFORMATION-TECHNOLOGY": 0.11333333333333333,
+        "PUBLIC-RELATIONS": 0.0033333333333333335,
+        "SALES": 0.02,
+        "TEACHER": 0.016666666666666666
+      },
+      "active_features": 47,
+      "analyzed_unique_unigrams": 52,
+      "known_unique_unigrams": 44,
+      "unigram_coverage": 0.8461538461538461,
+      "unknown_unigrams": [
+        "apis",
+        "boot",
+        "docker",
+        "git",
+        "junit",
+        "persist",
+        "postgresql",
+        "writes"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "uses",
+          "weight": 0.3477764190359438
+        },
+        {
+          "feature": "rest",
+          "weight": 0.3248454617957623
+        },
+        {
+          "feature": "follows",
+          "weight": 0.19808245061554733
+        },
+        {
+          "feature": "investigating",
+          "weight": 0.19185896272073155
+        },
+        {
+          "feature": "experience developing",
+          "weight": 0.1853510535814101
+        },
+        {
+          "feature": "query",
+          "weight": 0.17984869480540336
+        },
+        {
+          "feature": "participates",
+          "weight": 0.17884314444208865
+        },
+        {
+          "feature": "feature",
+          "weight": 0.1716802687187972
+        },
+        {
+          "feature": "defects",
+          "weight": 0.16932592034139493
+        },
+        {
+          "feature": "responsibilities include",
+          "weight": 0.16711729777126613
+        },
+        {
+          "feature": "java",
+          "weight": 0.1606093886319447
+        },
+        {
+          "feature": "modules",
+          "weight": 0.15830570694484636
+        },
+        {
+          "feature": "spring",
+          "weight": 0.15720732251795294
+        },
+        {
+          "feature": "changes",
+          "weight": 0.157129438483275
+        },
+        {
+          "feature": "developer",
+          "weight": 0.14734654737901218
+        },
+        {
+          "feature": "maintaining",
+          "weight": 0.14107633502654401
+        },
+        {
+          "feature": "checking",
+          "weight": 0.1406340836550937
+        },
+        {
+          "feature": "features",
+          "weight": 0.13527771558290794
+        },
+        {
+          "feature": "systems",
+          "weight": 0.13411553659929346
+        },
+        {
+          "feature": "collaborate",
+          "weight": 0.13356404199538094
+        },
+        {
+          "feature": "run",
+          "weight": 0.13301062505977865
+        },
+        {
+          "feature": "tests",
+          "weight": 0.12985904893744854
+        },
+        {
+          "feature": "code",
+          "weight": 0.12696329879248078
+        },
+        {
+          "feature": "behavior",
+          "weight": 0.12407055895131626
+        },
+        {
+          "feature": "software",
+          "weight": 0.12268712364175098
+        },
+        {
+          "feature": "integration",
+          "weight": 0.12139477748163499
+        },
+        {
+          "feature": "enterprise",
+          "weight": 0.1206102474983316
+        },
+        {
+          "feature": "consistent",
+          "weight": 0.12022435533639392
+        },
+        {
+          "feature": "works",
+          "weight": 0.11853767885893436
+        },
+        {
+          "feature": "environments",
+          "weight": 0.11187755338094124
+        },
+        {
+          "feature": "user",
+          "weight": 0.11127509726822686
+        },
+        {
+          "feature": "reviews",
+          "weight": 0.1062668646968207
+        },
+        {
+          "feature": "unit",
+          "weight": 0.1056236999570071
+        },
+        {
+          "feature": "data",
+          "weight": 0.10481250869484351
+        },
+        {
+          "feature": "implementing",
+          "weight": 0.10030392304879038
+        },
+        {
+          "feature": "understanding",
+          "weight": 0.10019426189548471
+        },
+        {
+          "feature": "implement",
+          "weight": 0.0955787730218647
+        },
+        {
+          "feature": "existing",
+          "weight": 0.09462939053375259
+        },
+        {
+          "feature": "responsibilities",
+          "weight": 0.09343177934772053
+        },
+        {
+          "feature": "requests",
+          "weight": 0.09298165134831039
+        },
+        {
+          "feature": "years experience",
+          "weight": 0.09271427423798363
+        },
+        {
+          "feature": "include",
+          "weight": 0.0895714534021099
+        },
+        {
+          "feature": "used",
+          "weight": 0.08900678006402697
+        },
+        {
+          "feature": "record",
+          "weight": 0.08690877412979557
+        },
+        {
+          "feature": "developing",
+          "weight": 0.08332195608646868
+        },
+        {
+          "feature": "years",
+          "weight": 0.061125940611110964
+        },
+        {
+          "feature": "experience",
+          "weight": 0.03691965970547367
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 179,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "software-long-pt",
+      "area": "software",
+      "language": "pt",
+      "detail": "long",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. Sua atuação utiliza Java, Spring Boot, PostgreSQL, APIs REST, Git, testes unitários JUnit e Docker. No cotidiano, compreende solicitações dos usuários, lê o código existente e implementa mudanças nas funcionalidades. Investiga defeitos, reproduz situações relatadas e verifica se as correções preservam o comportamento esperado. No projeto fictício de um sistema de solicitações internas, participou da implementação de funcionalidades em Java e Spring Boot. As APIs REST recebem e retornam os dados usados pelos módulos. O PostgreSQL mantém os registros consultados e atualizados pelo sistema. Os testes unitários JUnit verificam o comportamento das partes alteradas. O Git registra o histórico das mudanças e permite a revisão do código com a equipe. O Docker é utilizado para executar o sistema em ambientes consistentes. Em outro projeto fictício, participou da manutenção de um sistema empresarial existente. Leu os módulos em Java, ajustou funcionalidades em Spring Boot e acompanhou as chamadas às APIs REST. Consultou e persistiu dados em PostgreSQL para verificar solicitações e seus resultados. Acrescentou testes unitários JUnit para as alterações, registrou as mudanças no Git e conferiu a execução com Docker. Suas responsabilidades incluem explicar as mudanças realizadas, revisar o comportamento das funcionalidades e acompanhar a integração dos módulos. Esses projetos descrevem a mesma experiência de dois anos, sem acrescentar períodos de trabalho ou tecnologias diferentes.",
+      "control": false,
+      "words": 231,
+      "characters": 1609,
+      "minimized_text": "Desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. Sua atuação utiliza Java, Spring Boot, PostgreSQL, APIs REST, Git, testes unitários JUnit e Docker. No cotidiano, compreende solicitações dos usuários, lê o código existente e implementa mudanças nas funcionalidades. Investiga defeitos, reproduz situações relatadas e verifica se as correções preservam o comportamento esperado. No projeto fictício de um sistema de solicitações internas, participou da implementação de funcionalidades em Java e Spring Boot. As APIs REST recebem e retornam os dados usados pelos módulos. O PostgreSQL mantém os registros consultados e atualizados pelo sistema. Os testes unitários JUnit verificam o comportamento das partes alteradas. O Git registra o histórico das mudanças e permite a revisão do código com a equipe. O Docker é utilizado para executar o sistema em ambientes consistentes. Em outro projeto fictício, participou da manutenção de um sistema empresarial existente. Leu os módulos em Java, ajustou funcionalidades em Spring Boot e acompanhou as chamadas às APIs REST. Consultou e persistiu dados em PostgreSQL para verificar solicitações e seus resultados. Acrescentou testes unitários JUnit para as alterações, registrou as mudanças no Git e conferiu a execução com Docker. Suas responsabilidades incluem explicar as mudanças realizadas, revisar o comportamento das funcionalidades e acompanhar a integração dos módulos. Esses projetos descrevem a mesma experiência de dois anos, sem acrescentar períodos de trabalho ou tecnologias diferentes.",
+      "cleaned_text_at_tfidf": "desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. sua atuação utiliza java spring boot postgresql apis rest git testes unitários junit e docker. no cotidiano compreende solicitações dos usuários lê o código existente e implementa mudanças nas funcionalidades. investiga defeitos reproduz situações relatadas e verifica se as correções preservam o comportamento esperado. no projeto fictício de um sistema de solicitações internas participou da implementação de funcionalidades em java e spring boot. as apis rest recebem e retornam os dados usados pelos módulos. o postgresql mantém os registros consultados e atualizados pelo sistema. os testes unitários junit verificam o comportamento das partes alteradas. o git registra o histórico das mudanças e permite a revisão do código com a equipe. o docker é utilizado para executar o sistema em ambientes consistentes. em outro projeto fictício participou da manutenção de um sistema empresarial existente. leu os módulos em java ajustou funcionalidades em spring boot e acompanhou as chamadas às apis rest. consultou e persistiu dados em postgresql para verificar solicitações e seus resultados. acrescentou testes unitários junit para as alterações registrou as mudanças no git e conferiu a execução com docker. suas responsabilidades incluem explicar as mudanças realizadas revisar o comportamento das funcionalidades e acompanhar a integração dos módulos. esses projetos descrevem a mesma experiência de dois anos sem acrescentar períodos de trabalho ou tecnologias diferentes.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.5733333333333334
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06333333333333334
+        },
+        {
+          "category": "CONSULTANT",
+          "probability": 0.04
+        }
+      ],
+      "expected_probability": 0.02,
+      "it_probability": 0.02,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.013333333333333334,
+        "AGRICULTURE": 0.016666666666666666,
+        "APPAREL": 0.023333333333333334,
+        "ARTS": 0.03333333333333333,
+        "AUTOMOBILE": 0.013333333333333334,
+        "AVIATION": 0.06333333333333334,
+        "BANKING": 0.02,
+        "BPO": 0.016666666666666666,
+        "BUSINESS-DEVELOPMENT": 0.5733333333333334,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.023333333333333334,
+        "CONSULTANT": 0.04,
+        "DESIGNER": 0.006666666666666667,
+        "DIGITAL-MEDIA": 0.016666666666666666,
+        "ENGINEERING": 0.03333333333333333,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.006666666666666667,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.02,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 10,
+      "analyzed_unique_unigrams": 119,
+      "known_unique_unigrams": 10,
+      "unigram_coverage": 0.08403361344537816,
+      "unknown_unigrams": [
+        "acompanhar",
+        "acompanhou",
+        "acrescentar",
+        "acrescentou",
+        "ajustou",
+        "alteradas",
+        "alterações",
+        "ambientes",
+        "anos",
+        "apis",
+        "atualizados",
+        "atuação",
+        "boot",
+        "chamadas",
+        "comportamento",
+        "compreende",
+        "conferiu",
+        "consistentes",
+        "consultados",
+        "consultou",
+        "correções",
+        "cotidiano",
+        "código",
+        "da",
+        "dados",
+        "das",
+        "defeitos",
+        "descrevem",
+        "desenvolvedora",
+        "desenvolvimento",
+        "diferentes",
+        "docker",
+        "dois",
+        "em",
+        "empresariais",
+        "empresarial",
+        "equipe",
+        "esperado",
+        "esses",
+        "executar",
+        "execução",
+        "existente",
+        "experiência",
+        "explicar",
+        "fictício",
+        "funcionalidades",
+        "git",
+        "histórico",
+        "implementa",
+        "implementação",
+        "incluem",
+        "integração",
+        "internas",
+        "investiga",
+        "junit",
+        "leu",
+        "lê",
+        "mantém",
+        "manutenção",
+        "mesma",
+        "mudanças",
+        "módulos",
+        "na",
+        "ou",
+        "outro",
+        "para",
+        "partes",
+        "participou",
+        "pelo",
+        "pelos",
+        "permite",
+        "persistiu",
+        "períodos",
+        "postgresql",
+        "preservam",
+        "projeto",
+        "projetos",
+        "realizadas",
+        "recebem",
+        "registra",
+        "registros",
+        "registrou",
+        "relatadas",
+        "reproduz",
+        "responsabilidades",
+        "resultados",
+        "retornam",
+        "revisar",
+        "revisão",
+        "seus",
+        "sistema",
+        "sistemas",
+        "situações",
+        "solicitações",
+        "sua",
+        "suas",
+        "tecnologias",
+        "testes",
+        "trabalho",
+        "um",
+        "unitários",
+        "usados",
+        "usuários",
+        "utiliza",
+        "utilizado",
+        "verifica",
+        "verificam",
+        "verificar",
+        "às"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "rest",
+          "weight": 0.43644295498451124
+        },
+        {
+          "feature": "os",
+          "weight": 0.4201757121897844
+        },
+        {
+          "feature": "java",
+          "weight": 0.36535606770070017
+        },
+        {
+          "feature": "spring",
+          "weight": 0.3576170089317621
+        },
+        {
+          "feature": "dos",
+          "weight": 0.3547937000056606
+        },
+        {
+          "feature": "com",
+          "weight": 0.3032011055737531
+        },
+        {
+          "feature": "se",
+          "weight": 0.23973245435571636
+        },
+        {
+          "feature": "nas",
+          "weight": 0.22067775316559604
+        },
+        {
+          "feature": "sem",
+          "weight": 0.20358253882452204
+        },
+        {
+          "feature": "software",
+          "weight": 0.07854480335741293
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 27,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "software-long-en",
+      "area": "software",
+      "language": "en",
+      "detail": "long",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Software developer with two years of experience developing and maintaining enterprise systems. Her work uses Java, Spring Boot, PostgreSQL, REST APIs, Git, JUnit unit tests and Docker. In daily work, she understands user requests, reads existing code and implements feature changes. She investigates defects, reproduces reported situations and checks that corrections preserve expected behavior. In the fictional project for an internal request system, she participated in implementing features in Java and Spring Boot. REST APIs receive and return data used by the modules. PostgreSQL stores the records queried and updated by the system. JUnit unit tests check the behavior of the modified parts. Git records the history of changes and enables code review with the team. Docker is used to run the system in consistent environments. In another fictional project, she participated in maintaining an existing enterprise system. She read the Java modules, adjusted Spring Boot features and followed calls to REST APIs. She queried and persisted data in PostgreSQL to check requests and their results. She added JUnit unit tests for the changes, recorded the changes in Git and checked execution with Docker. Her responsibilities include explaining the changes made, reviewing feature behavior and following module integration. These projects describe the same two years of experience, without adding employment periods or different technologies.",
+      "control": false,
+      "words": 214,
+      "characters": 1443,
+      "minimized_text": "Software developer with two years of experience developing and maintaining enterprise systems. Her work uses Java, Spring Boot, PostgreSQL, REST APIs, Git, JUnit unit tests and Docker. In daily work, she understands user requests, reads existing code and implements feature changes. She investigates defects, reproduces reported situations and checks that corrections preserve expected behavior. In the fictional project for an internal request system, she participated in implementing features in Java and Spring Boot. REST APIs receive and return data used by the modules. PostgreSQL stores the records queried and updated by the system. JUnit unit tests check the behavior of the modified parts. Git records the history of changes and enables code review with the team. Docker is used to run the system in consistent environments. In another fictional project, she participated in maintaining an existing enterprise system. She read the Java modules, adjusted Spring Boot features and followed calls to REST APIs. She queried and persisted data in PostgreSQL to check requests and their results. She added JUnit unit tests for the changes, recorded the changes in Git and checked execution with Docker. Her responsibilities include explaining the changes made, reviewing feature behavior and following module integration. These projects describe the same two years of experience, without adding employment periods or different technologies.",
+      "cleaned_text_at_tfidf": "software developer with two years of experience developing and maintaining enterprise systems. her work uses java spring boot postgresql rest apis git junit unit tests and docker. in daily work she understands user requests reads existing code and implements feature changes. she investigates defects reproduces reported situations and checks that corrections preserve expected behavior. in the fictional project for an internal request system she participated in implementing features in java and spring boot. rest apis receive and return data used by the modules. postgresql stores the records queried and updated by the system. junit unit tests check the behavior of the modified parts. git records the history of changes and enables code review with the team. docker is used to run the system in consistent environments. in another fictional project she participated in maintaining an existing enterprise system. she read the java modules adjusted spring boot features and followed calls to rest apis. she queried and persisted data in postgresql to check requests and their results. she added junit unit tests for the changes recorded the changes in git and checked execution with docker. her responsibilities include explaining the changes made reviewing feature behavior and following module integration. these projects describe the same two years of experience without adding employment periods or different technologies.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.12333333333333334
+        },
+        {
+          "category": "INFORMATION-TECHNOLOGY",
+          "probability": 0.12
+        },
+        {
+          "category": "ENGINEERING",
+          "probability": 0.07666666666666666
+        }
+      ],
+      "expected_probability": 0.12,
+      "it_probability": 0.12,
+      "probabilities": {
+        "ACCOUNTANT": 0.006666666666666667,
+        "ADVOCATE": 0.04,
+        "AGRICULTURE": 0.06666666666666667,
+        "APPAREL": 0.04,
+        "ARTS": 0.06333333333333334,
+        "AUTOMOBILE": 0.013333333333333334,
+        "AVIATION": 0.07,
+        "BANKING": 0.04,
+        "BPO": 0.016666666666666666,
+        "BUSINESS-DEVELOPMENT": 0.12333333333333334,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.056666666666666664,
+        "CONSULTANT": 0.06333333333333334,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.023333333333333334,
+        "ENGINEERING": 0.07666666666666666,
+        "FINANCE": 0.013333333333333334,
+        "FITNESS": 0.016666666666666666,
+        "HEALTHCARE": 0.04,
+        "HR": 0.016666666666666666,
+        "INFORMATION-TECHNOLOGY": 0.12,
+        "PUBLIC-RELATIONS": 0.02,
+        "SALES": 0.03333333333333333,
+        "TEACHER": 0.013333333333333334
+      },
+      "active_features": 79,
+      "analyzed_unique_unigrams": 90,
+      "known_unique_unigrams": 76,
+      "unigram_coverage": 0.8444444444444444,
+      "unknown_unigrams": [
+        "apis",
+        "boot",
+        "docker",
+        "enables",
+        "fictional",
+        "git",
+        "investigates",
+        "junit",
+        "persisted",
+        "postgresql",
+        "preserve",
+        "queried",
+        "reads",
+        "reproduces"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "rest",
+          "weight": 0.2794252949891895
+        },
+        {
+          "feature": "java",
+          "weight": 0.23391310554430067
+        },
+        {
+          "feature": "spring",
+          "weight": 0.22895830273501733
+        },
+        {
+          "feature": "feature",
+          "weight": 0.2017281522150547
+        },
+        {
+          "feature": "tests",
+          "weight": 0.18912800601960744
+        },
+        {
+          "feature": "modules",
+          "weight": 0.18601274325466668
+        },
+        {
+          "feature": "behavior",
+          "weight": 0.18069759182899528
+        },
+        {
+          "feature": "changes",
+          "weight": 0.16805878872146188
+        },
+        {
+          "feature": "features",
+          "weight": 0.15895433880705379
+        },
+        {
+          "feature": "unit",
+          "weight": 0.15383140354665947
+        },
+        {
+          "feature": "code",
+          "weight": 0.14918471327934715
+        },
+        {
+          "feature": "enterprise",
+          "weight": 0.14171973603961935
+        },
+        {
+          "feature": "check",
+          "weight": 0.13110318213164532
+        },
+        {
+          "feature": "experience developing",
+          "weight": 0.12863124507118945
+        },
+        {
+          "feature": "explaining",
+          "weight": 0.127818987169806
+        },
+        {
+          "feature": "participated",
+          "weight": 0.12721844757287243
+        },
+        {
+          "feature": "implements",
+          "weight": 0.12213205024464832
+        },
+        {
+          "feature": "module",
+          "weight": 0.12029627375197507
+        },
+        {
+          "feature": "corrections",
+          "weight": 0.1191438963672022
+        },
+        {
+          "feature": "understands",
+          "weight": 0.11858720672508287
+        },
+        {
+          "feature": "defects",
+          "weight": 0.11751000890195736
+        },
+        {
+          "feature": "responsibilities include",
+          "weight": 0.11597725327096108
+        },
+        {
+          "feature": "uses",
+          "weight": 0.11500569162731869
+        },
+        {
+          "feature": "periods",
+          "weight": 0.11407080156187506
+        },
+        {
+          "feature": "adjusted",
+          "weight": 0.11361626318430343
+        },
+        {
+          "feature": "existing",
+          "weight": 0.11119164852239428
+        },
+        {
+          "feature": "adding",
+          "weight": 0.1102522354058685
+        },
+        {
+          "feature": "requests",
+          "weight": 0.10925551815812953
+        },
+        {
+          "feature": "years experience",
+          "weight": 0.108941344078526
+        },
+        {
+          "feature": "modified",
+          "weight": 0.10872734503817032
+        },
+        {
+          "feature": "checked",
+          "weight": 0.10560510884933838
+        },
+        {
+          "feature": "used",
+          "weight": 0.1045849555742338
+        },
+        {
+          "feature": "expected",
+          "weight": 0.10312587678853886
+        },
+        {
+          "feature": "added",
+          "weight": 0.10225660701722758
+        },
+        {
+          "feature": "developer",
+          "weight": 0.10225660701722758
+        },
+        {
+          "feature": "maintaining",
+          "weight": 0.09790516036410954
+        },
+        {
+          "feature": "reviewing",
+          "weight": 0.09644586622086722
+        },
+        {
+          "feature": "return",
+          "weight": 0.09622168689403902
+        },
+        {
+          "feature": "read",
+          "weight": 0.09534472286997159
+        },
+        {
+          "feature": "records",
+          "weight": 0.09473967742956566
+        },
+        {
+          "feature": "receive",
+          "weight": 0.09288601412977375
+        },
+        {
+          "feature": "stores",
+          "weight": 0.09269172570988622
+        },
+        {
+          "feature": "run",
+          "weight": 0.09230766148098374
+        },
+        {
+          "feature": "parts",
+          "weight": 0.0919294610576594
+        },
+        {
+          "feature": "recorded",
+          "weight": 0.0887628179614183
+        },
+        {
+          "feature": "situations",
+          "weight": 0.08610337069153232
+        },
+        {
+          "feature": "technologies",
+          "weight": 0.0846627527926552
+        },
+        {
+          "feature": "integration",
+          "weight": 0.08424641279821046
+        },
+        {
+          "feature": "followed",
+          "weight": 0.08383695477256935
+        },
+        {
+          "feature": "consistent",
+          "weight": 0.083434154896827
+        },
+        {
+          "feature": "request",
+          "weight": 0.08264768736377963
+        },
+        {
+          "feature": "reported",
+          "weight": 0.08138997326514595
+        },
+        {
+          "feature": "employment",
+          "weight": 0.07961558874082042
+        },
+        {
+          "feature": "environments",
+          "weight": 0.07764158179218617
+        },
+        {
+          "feature": "checks",
+          "weight": 0.07732734950395473
+        },
+        {
+          "feature": "user",
+          "weight": 0.07722348500567311
+        },
+        {
+          "feature": "execution",
+          "weight": 0.07513726451754753
+        },
+        {
+          "feature": "following",
+          "weight": 0.07457210738378903
+        },
+        {
+          "feature": "updated",
+          "weight": 0.07374783607453225
+        },
+        {
+          "feature": "data",
+          "weight": 0.07273853173179262
+        },
+        {
+          "feature": "project",
+          "weight": 0.07260670749489452
+        },
+        {
+          "feature": "years",
+          "weight": 0.07182434617506217
+        },
+        {
+          "feature": "implementing",
+          "weight": 0.06960963133464874
+        },
+        {
+          "feature": "different",
+          "weight": 0.0689329737280961
+        },
+        {
+          "feature": "responsibilities",
+          "weight": 0.06484045207455628
+        },
+        {
+          "feature": "history",
+          "weight": 0.06391487816061366
+        },
+        {
+          "feature": "calls",
+          "weight": 0.06261701891637804
+        },
+        {
+          "feature": "include",
+          "weight": 0.062161435564156944
+        },
+        {
+          "feature": "review",
+          "weight": 0.0589384291977537
+        },
+        {
+          "feature": "developing",
+          "weight": 0.05782436487992204
+        },
+        {
+          "feature": "internal",
+          "weight": 0.05613109106143808
+        },
+        {
+          "feature": "work",
+          "weight": 0.05604170730332698
+        },
+        {
+          "feature": "results",
+          "weight": 0.055692643393460625
+        },
+        {
+          "feature": "software",
+          "weight": 0.05028699535038176
+        },
+        {
+          "feature": "projects",
+          "weight": 0.046057580199601135
+        },
+        {
+          "feature": "daily",
+          "weight": 0.04479432568288403
+        },
+        {
+          "feature": "systems",
+          "weight": 0.04435047691654043
+        },
+        {
+          "feature": "experience",
+          "weight": 0.04338142518283678
+        },
+        {
+          "feature": "team",
+          "weight": 0.031477507809268196
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 237,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "hr-medium-pt",
+      "area": "hr",
+      "language": "pt",
+      "detail": "medium",
+      "expected": "HR",
+      "text": "Analista de recursos humanos com experiência em recrutamento, seleção e integração de funcionários. Conduz entrevistas, organiza processos seletivos e acompanha a admissão de profissionais. Mantém registros de pessoal, acompanha benefícios e esclarece dúvidas sobre políticas internas. Participa de treinamentos e acompanha o desenvolvimento de funcionários. Apoia gestores na avaliação de desempenho e no acompanhamento das necessidades das equipes. Prepara comunicações internas e mantém os documentos dos processos de recursos humanos organizados.",
+      "control": false,
+      "words": 71,
+      "characters": 550,
+      "minimized_text": "Analista de recursos humanos com experiência em recrutamento, seleção e integração de funcionários. Conduz entrevistas, organiza processos seletivos e acompanha a admissão de profissionais. Mantém registros de pessoal, acompanha benefícios e esclarece dúvidas sobre políticas internas. Participa de treinamentos e acompanha o desenvolvimento de funcionários. Apoia gestores na avaliação de desempenho e no acompanhamento das necessidades das equipes. Prepara comunicações internas e mantém os documentos dos processos de recursos humanos organizados.",
+      "cleaned_text_at_tfidf": "analista de recursos humanos com experiência em recrutamento seleção e integração de funcionários. conduz entrevistas organiza processos seletivos e acompanha a admissão de profissionais. mantém registros de pessoal acompanha benefícios e esclarece dúvidas sobre políticas internas. participa de treinamentos e acompanha o desenvolvimento de funcionários. apoia gestores na avaliação de desempenho e no acompanhamento das necessidades das equipes. prepara comunicações internas e mantém os documentos dos processos de recursos humanos organizados.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.62
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06666666666666667
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.03
+        }
+      ],
+      "expected_probability": 0.0033333333333333335,
+      "it_probability": 0.01,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.01,
+        "AGRICULTURE": 0.02,
+        "APPAREL": 0.016666666666666666,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.06666666666666667,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.62,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.03,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.006666666666666667,
+        "ENGINEERING": 0.02,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.01,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.01,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 3,
+      "analyzed_unique_unigrams": 45,
+      "known_unique_unigrams": 3,
+      "unigram_coverage": 0.06666666666666667,
+      "unknown_unigrams": [
+        "acompanha",
+        "acompanhamento",
+        "admissão",
+        "analista",
+        "apoia",
+        "avaliação",
+        "benefícios",
+        "comunicações",
+        "conduz",
+        "das",
+        "desempenho",
+        "desenvolvimento",
+        "documentos",
+        "dúvidas",
+        "em",
+        "entrevistas",
+        "equipes",
+        "esclarece",
+        "experiência",
+        "funcionários",
+        "gestores",
+        "humanos",
+        "integração",
+        "internas",
+        "mantém",
+        "na",
+        "necessidades",
+        "organiza",
+        "organizados",
+        "participa",
+        "pessoal",
+        "políticas",
+        "prepara",
+        "processos",
+        "profissionais",
+        "recrutamento",
+        "recursos",
+        "registros",
+        "seletivos",
+        "seleção",
+        "sobre",
+        "treinamentos"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "dos",
+          "weight": 0.677060433632889
+        },
+        {
+          "feature": "os",
+          "weight": 0.5689225882054383
+        },
+        {
+          "feature": "com",
+          "weight": 0.4668150145812254
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 3,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "hr-medium-en",
+      "area": "hr",
+      "language": "en",
+      "detail": "medium",
+      "expected": "HR",
+      "text": "Human resources analyst with experience in recruitment, selection and employee onboarding. Conducts interviews, organizes hiring processes and follows the admission of professionals. Maintains personnel records, monitors benefits and answers questions about internal policies. Participates in training and follows employee development. Supports managers in performance reviews and in tracking team needs. Prepares internal communications and keeps human resources process documents organized.",
+      "control": false,
+      "words": 60,
+      "characters": 492,
+      "minimized_text": "Human resources analyst with experience in recruitment, selection and employee onboarding. Conducts interviews, organizes hiring processes and follows the admission of professionals. Maintains personnel records, monitors benefits and answers questions about internal policies. Participates in training and follows employee development. Supports managers in performance reviews and in tracking team needs. Prepares internal communications and keeps human resources process documents organized.",
+      "cleaned_text_at_tfidf": "human resources analyst with experience in recruitment selection and employee onboarding. conducts interviews organizes hiring processes and follows the admission of professionals. maintains personnel records monitors benefits and answers questions about internal policies. participates in training and follows employee development. supports managers in performance reviews and in tracking team needs. prepares internal communications and keeps human resources process documents organized.",
+      "redactions": 0,
+      "prediction": "HR",
+      "top3": [
+        {
+          "category": "HR",
+          "probability": 0.30333333333333334
+        },
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.18
+        },
+        {
+          "category": "ADVOCATE",
+          "probability": 0.056666666666666664
+        }
+      ],
+      "expected_probability": 0.30333333333333334,
+      "it_probability": 0.013333333333333334,
+      "probabilities": {
+        "ACCOUNTANT": 0.006666666666666667,
+        "ADVOCATE": 0.056666666666666664,
+        "AGRICULTURE": 0.03666666666666667,
+        "APPAREL": 0.02,
+        "ARTS": 0.023333333333333334,
+        "AUTOMOBILE": 0.006666666666666667,
+        "AVIATION": 0.03666666666666667,
+        "BANKING": 0.02,
+        "BPO": 0.006666666666666667,
+        "BUSINESS-DEVELOPMENT": 0.18,
+        "CHEF": 0.01,
+        "CONSTRUCTION": 0.006666666666666667,
+        "CONSULTANT": 0.04,
+        "DESIGNER": 0.02666666666666667,
+        "DIGITAL-MEDIA": 0.013333333333333334,
+        "ENGINEERING": 0.023333333333333334,
+        "FINANCE": 0.02666666666666667,
+        "FITNESS": 0.03,
+        "HEALTHCARE": 0.02666666666666667,
+        "HR": 0.30333333333333334,
+        "INFORMATION-TECHNOLOGY": 0.013333333333333334,
+        "PUBLIC-RELATIONS": 0.03666666666666667,
+        "SALES": 0.03666666666666667,
+        "TEACHER": 0.013333333333333334
+      },
+      "active_features": 44,
+      "analyzed_unique_unigrams": 41,
+      "known_unique_unigrams": 39,
+      "unigram_coverage": 0.9512195121951219,
+      "unknown_unigrams": [
+        "keeps",
+        "organizes"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "follows",
+          "weight": 0.36695028844367944
+        },
+        {
+          "feature": "internal communications",
+          "weight": 0.22063545114058616
+        },
+        {
+          "feature": "human resources",
+          "weight": 0.21221995189804155
+        },
+        {
+          "feature": "employee development",
+          "weight": 0.20691181714099852
+        },
+        {
+          "feature": "personnel records",
+          "weight": 0.20691181714099852
+        },
+        {
+          "feature": "answers",
+          "weight": 0.20549150058041948
+        },
+        {
+          "feature": "conducts",
+          "weight": 0.2015164384172086
+        },
+        {
+          "feature": "admission",
+          "weight": 0.1979088537267815
+        },
+        {
+          "feature": "participates",
+          "weight": 0.19567656610947345
+        },
+        {
+          "feature": "performance reviews",
+          "weight": 0.18610345532786002
+        },
+        {
+          "feature": "onboarding",
+          "weight": 0.17772980622392798
+        },
+        {
+          "feature": "human",
+          "weight": 0.17617568811609635
+        },
+        {
+          "feature": "monitors",
+          "weight": 0.1757265773339017
+        },
+        {
+          "feature": "supports",
+          "weight": 0.1750810353464744
+        },
+        {
+          "feature": "prepares",
+          "weight": 0.1732060640464234
+        },
+        {
+          "feature": "resources",
+          "weight": 0.1594794438876847
+        },
+        {
+          "feature": "employee",
+          "weight": 0.1498350105408059
+        },
+        {
+          "feature": "internal",
+          "weight": 0.1498350105408059
+        },
+        {
+          "feature": "maintains",
+          "weight": 0.1440561834487685
+        },
+        {
+          "feature": "selection",
+          "weight": 0.1391680118675567
+        },
+        {
+          "feature": "recruitment",
+          "weight": 0.1369357242502487
+        },
+        {
+          "feature": "interviews",
+          "weight": 0.13482416130726976
+        },
+        {
+          "feature": "professionals",
+          "weight": 0.13303850624485505
+        },
+        {
+          "feature": "hiring",
+          "weight": 0.1212615766123845
+        },
+        {
+          "feature": "benefits",
+          "weight": 0.11861016022088777
+        },
+        {
+          "feature": "analyst",
+          "weight": 0.11771574553375484
+        },
+        {
+          "feature": "reviews",
+          "weight": 0.11626912085426461
+        },
+        {
+          "feature": "questions",
+          "weight": 0.1093860751591942
+        },
+        {
+          "feature": "tracking",
+          "weight": 0.10786807476496009
+        },
+        {
+          "feature": "communications",
+          "weight": 0.10134387754600789
+        },
+        {
+          "feature": "managers",
+          "weight": 0.09660420196517203
+        },
+        {
+          "feature": "documents",
+          "weight": 0.0964329104579199
+        },
+        {
+          "feature": "personnel",
+          "weight": 0.09276504886645175
+        },
+        {
+          "feature": "records",
+          "weight": 0.08821700249932292
+        },
+        {
+          "feature": "processes",
+          "weight": 0.08652313766682164
+        },
+        {
+          "feature": "organized",
+          "weight": 0.0857354591811984
+        },
+        {
+          "feature": "policies",
+          "weight": 0.08414378001675309
+        },
+        {
+          "feature": "performance",
+          "weight": 0.07256689785129755
+        },
+        {
+          "feature": "needs",
+          "weight": 0.07022653315085241
+        },
+        {
+          "feature": "process",
+          "weight": 0.06600703776707216
+        },
+        {
+          "feature": "development",
+          "weight": 0.05811653063696337
+        },
+        {
+          "feature": "training",
+          "weight": 0.053413487162034604
+        },
+        {
+          "feature": "team",
+          "weight": 0.04962670573775307
+        },
+        {
+          "feature": "experience",
+          "weight": 0.04039468359625433
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 238,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "finance-medium-pt",
+      "area": "finance",
+      "language": "pt",
+      "detail": "medium",
+      "expected": "FINANCE",
+      "text": "Analista financeiro com experiência em planejamento financeiro, elaboração de orçamentos e análise de fluxo de caixa. Acompanha receitas e despesas, compara resultados com o orçamento e investiga variações. Prepara projeções financeiras e relatórios para apoiar decisões de gestão. Avalia custos e acompanha indicadores financeiros da operação. Revisa previsões de caixa e consolida informações para o planejamento financeiro periódico. Apresenta análises de resultados, riscos financeiros e necessidades de recursos aos responsáveis pela gestão.",
+      "control": false,
+      "words": 72,
+      "characters": 546,
+      "minimized_text": "Analista financeiro com experiência em planejamento financeiro, elaboração de orçamentos e análise de fluxo de caixa. Acompanha receitas e despesas, compara resultados com o orçamento e investiga variações. Prepara projeções financeiras e relatórios para apoiar decisões de gestão. Avalia custos e acompanha indicadores financeiros da operação. Revisa previsões de caixa e consolida informações para o planejamento financeiro periódico. Apresenta análises de resultados, riscos financeiros e necessidades de recursos aos responsáveis pela gestão.",
+      "cleaned_text_at_tfidf": "analista financeiro com experiência em planejamento financeiro elaboração de orçamentos e análise de fluxo de caixa. acompanha receitas e despesas compara resultados com o orçamento e investiga variações. prepara projeções financeiras e relatórios para apoiar decisões de gestão. avalia custos e acompanha indicadores financeiros da operação. revisa previsões de caixa e consolida informações para o planejamento financeiro periódico. apresenta análises de resultados riscos financeiros e necessidades de recursos aos responsáveis pela gestão.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.62
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06666666666666667
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.03
+        }
+      ],
+      "expected_probability": 0.006666666666666667,
+      "it_probability": 0.01,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.01,
+        "AGRICULTURE": 0.02,
+        "APPAREL": 0.02,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.06666666666666667,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.62,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.02666666666666667,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.006666666666666667,
+        "ENGINEERING": 0.02,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.01,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.01,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 1,
+      "analyzed_unique_unigrams": 46,
+      "known_unique_unigrams": 1,
+      "unigram_coverage": 0.021739130434782608,
+      "unknown_unigrams": [
+        "acompanha",
+        "analista",
+        "análise",
+        "análises",
+        "aos",
+        "apoiar",
+        "apresenta",
+        "avalia",
+        "caixa",
+        "compara",
+        "consolida",
+        "custos",
+        "da",
+        "decisões",
+        "despesas",
+        "elaboração",
+        "em",
+        "experiência",
+        "financeiras",
+        "financeiro",
+        "financeiros",
+        "fluxo",
+        "gestão",
+        "indicadores",
+        "informações",
+        "investiga",
+        "necessidades",
+        "operação",
+        "orçamento",
+        "orçamentos",
+        "para",
+        "pela",
+        "periódico",
+        "planejamento",
+        "prepara",
+        "previsões",
+        "projeções",
+        "receitas",
+        "recursos",
+        "relatórios",
+        "responsáveis",
+        "resultados",
+        "revisa",
+        "riscos",
+        "variações"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "com",
+          "weight": 1.0
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 2,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "finance-medium-en",
+      "area": "finance",
+      "language": "en",
+      "detail": "medium",
+      "expected": "FINANCE",
+      "text": "Financial analyst with experience in financial planning, budgeting and cash flow analysis. Monitors revenue and expenses, compares results with the budget and investigates variances. Prepares financial forecasts and reports to support management decisions. Evaluates costs and monitors financial indicators for operations. Reviews cash forecasts and consolidates information for periodic financial planning. Presents analyses of results, financial risks and resource needs to management.",
+      "control": false,
+      "words": 62,
+      "characters": 487,
+      "minimized_text": "Financial analyst with experience in financial planning, budgeting and cash flow analysis. Monitors revenue and expenses, compares results with the budget and investigates variances. Prepares financial forecasts and reports to support management decisions. Evaluates costs and monitors financial indicators for operations. Reviews cash forecasts and consolidates information for periodic financial planning. Presents analyses of results, financial risks and resource needs to management.",
+      "cleaned_text_at_tfidf": "financial analyst with experience in financial planning budgeting and cash flow analysis. monitors revenue and expenses compares results with the budget and investigates variances. prepares financial forecasts and reports to support management decisions. evaluates costs and monitors financial indicators for operations. reviews cash forecasts and consolidates information for periodic financial planning. presents analyses of results financial risks and resource needs to management.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.22333333333333333
+        },
+        {
+          "category": "FINANCE",
+          "probability": 0.17666666666666667
+        },
+        {
+          "category": "BANKING",
+          "probability": 0.13
+        }
+      ],
+      "expected_probability": 0.17666666666666667,
+      "it_probability": 0.07,
+      "probabilities": {
+        "ACCOUNTANT": 0.02666666666666667,
+        "ADVOCATE": 0.023333333333333334,
+        "AGRICULTURE": 0.03333333333333333,
+        "APPAREL": 0.03,
+        "ARTS": 0.016666666666666666,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.03333333333333333,
+        "BANKING": 0.13,
+        "BPO": 0.02,
+        "BUSINESS-DEVELOPMENT": 0.22333333333333333,
+        "CHEF": 0.016666666666666666,
+        "CONSTRUCTION": 0.03,
+        "CONSULTANT": 0.03,
+        "DESIGNER": 0.01,
+        "DIGITAL-MEDIA": 0.01,
+        "ENGINEERING": 0.006666666666666667,
+        "FINANCE": 0.17666666666666667,
+        "FITNESS": 0.02666666666666667,
+        "HEALTHCARE": 0.02666666666666667,
+        "HR": 0.016666666666666666,
+        "INFORMATION-TECHNOLOGY": 0.07,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.02,
+        "TEACHER": 0.0
+      },
+      "active_features": 35,
+      "analyzed_unique_unigrams": 35,
+      "known_unique_unigrams": 31,
+      "unigram_coverage": 0.8857142857142857,
+      "unknown_unigrams": [
+        "compares",
+        "consolidates",
+        "investigates",
+        "presents"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "financial planning",
+          "weight": 0.3312331530136971
+        },
+        {
+          "feature": "monitors",
+          "weight": 0.3155825919697784
+        },
+        {
+          "feature": "forecasts",
+          "weight": 0.3027951525057172
+        },
+        {
+          "feature": "financial",
+          "weight": 0.23942274077337855
+        },
+        {
+          "feature": "experience financial",
+          "weight": 0.22434448720513864
+        },
+        {
+          "feature": "evaluates",
+          "weight": 0.2194654559319225
+        },
+        {
+          "feature": "financial analyst",
+          "weight": 0.19830507252335175
+        },
+        {
+          "feature": "periodic",
+          "weight": 0.1965037501182114
+        },
+        {
+          "feature": "indicators",
+          "weight": 0.19563163605431752
+        },
+        {
+          "feature": "analyses",
+          "weight": 0.1899925121166544
+        },
+        {
+          "feature": "prepares",
+          "weight": 0.18371472611551506
+        },
+        {
+          "feature": "variances",
+          "weight": 0.1812034185734662
+        },
+        {
+          "feature": "risks",
+          "weight": 0.17714468911478104
+        },
+        {
+          "feature": "cash",
+          "weight": 0.17584003730226433
+        },
+        {
+          "feature": "cash flow",
+          "weight": 0.17499231471062088
+        },
+        {
+          "feature": "results",
+          "weight": 0.1576843264171636
+        },
+        {
+          "feature": "decisions",
+          "weight": 0.1470735560169458
+        },
+        {
+          "feature": "expenses",
+          "weight": 0.13777666682350895
+        },
+        {
+          "feature": "budgeting",
+          "weight": 0.130725444982428
+        },
+        {
+          "feature": "planning",
+          "weight": 0.1306549078830577
+        },
+        {
+          "feature": "analyst",
+          "weight": 0.12485772983341457
+        },
+        {
+          "feature": "reviews",
+          "weight": 0.12332333634524398
+        },
+        {
+          "feature": "costs",
+          "weight": 0.12155407577449451
+        },
+        {
+          "feature": "flow",
+          "weight": 0.11944374401998159
+        },
+        {
+          "feature": "resource",
+          "weight": 0.11653096126744054
+        },
+        {
+          "feature": "revenue",
+          "weight": 0.10647721476613785
+        },
+        {
+          "feature": "budget",
+          "weight": 0.08846235153062804
+        },
+        {
+          "feature": "management",
+          "weight": 0.08096013797902596
+        },
+        {
+          "feature": "analysis",
+          "weight": 0.07801587554745393
+        },
+        {
+          "feature": "needs",
+          "weight": 0.07448727834605742
+        },
+        {
+          "feature": "operations",
+          "weight": 0.07416419345949174
+        },
+        {
+          "feature": "reports",
+          "weight": 0.07162314776849942
+        },
+        {
+          "feature": "support",
+          "weight": 0.0689037942931397
+        },
+        {
+          "feature": "information",
+          "weight": 0.06123675621910406
+        },
+        {
+          "feature": "experience",
+          "weight": 0.04284548739251831
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 191,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "health-medium-pt",
+      "area": "health",
+      "language": "pt",
+      "detail": "medium",
+      "expected": "HEALTHCARE",
+      "text": "Enfermeira com experiência no cuidado de pacientes em unidade hospitalar. Acompanha sinais vitais, administra medicamentos prescritos e registra a evolução dos pacientes. Realiza cuidados de enfermagem, orienta pacientes e familiares e comunica alterações à equipe responsável. Participa do planejamento dos cuidados, acompanha a segurança do paciente e organiza a continuidade da assistência. Mantém registros clínicos atualizados e colabora com outros profissionais de saúde no atendimento e na recuperação dos pacientes.",
+      "control": false,
+      "words": 70,
+      "characters": 523,
+      "minimized_text": "Enfermeira com experiência no cuidado de pacientes em unidade hospitalar. Acompanha sinais vitais, administra medicamentos prescritos e registra a evolução dos pacientes. Realiza cuidados de enfermagem, orienta pacientes e familiares e comunica alterações à equipe responsável. Participa do planejamento dos cuidados, acompanha a segurança do paciente e organiza a continuidade da assistência. Mantém registros clínicos atualizados e colabora com outros profissionais de saúde no atendimento e na recuperação dos pacientes.",
+      "cleaned_text_at_tfidf": "enfermeira com experiência no cuidado de pacientes em unidade hospitalar. acompanha sinais vitais administra medicamentos prescritos e registra a evolução dos pacientes. realiza cuidados de enfermagem orienta pacientes e familiares e comunica alterações à equipe responsável. participa do planejamento dos cuidados acompanha a segurança do paciente e organiza a continuidade da assistência. mantém registros clínicos atualizados e colabora com outros profissionais de saúde no atendimento e na recuperação dos pacientes.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.62
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06666666666666667
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.03
+        }
+      ],
+      "expected_probability": 0.016666666666666666,
+      "it_probability": 0.01,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.01,
+        "AGRICULTURE": 0.02,
+        "APPAREL": 0.02,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.06666666666666667,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.62,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.02666666666666667,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.006666666666666667,
+        "ENGINEERING": 0.02,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.01,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.01,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 2,
+      "analyzed_unique_unigrams": 45,
+      "known_unique_unigrams": 2,
+      "unigram_coverage": 0.044444444444444446,
+      "unknown_unigrams": [
+        "acompanha",
+        "administra",
+        "alterações",
+        "assistência",
+        "atendimento",
+        "atualizados",
+        "clínicos",
+        "colabora",
+        "comunica",
+        "continuidade",
+        "cuidado",
+        "cuidados",
+        "da",
+        "em",
+        "enfermagem",
+        "enfermeira",
+        "equipe",
+        "evolução",
+        "experiência",
+        "familiares",
+        "hospitalar",
+        "mantém",
+        "medicamentos",
+        "na",
+        "organiza",
+        "orienta",
+        "outros",
+        "paciente",
+        "pacientes",
+        "participa",
+        "planejamento",
+        "prescritos",
+        "profissionais",
+        "realiza",
+        "recuperação",
+        "registra",
+        "registros",
+        "responsável",
+        "saúde",
+        "segurança",
+        "sinais",
+        "unidade",
+        "vitais"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "dos",
+          "weight": 0.8738948305254599
+        },
+        {
+          "feature": "com",
+          "weight": 0.48611503286863866
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 2,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "health-medium-en",
+      "area": "health",
+      "language": "en",
+      "detail": "medium",
+      "expected": "HEALTHCARE",
+      "text": "Nurse with experience caring for patients in a hospital unit. Monitors vital signs, administers prescribed medication and records patient progress. Provides nursing care, guides patients and families and communicates changes to the responsible team. Participates in care planning, monitors patient safety and organizes continuity of care. Keeps clinical records updated and collaborates with other healthcare professionals in patient treatment and recovery.",
+      "control": false,
+      "words": 61,
+      "characters": 457,
+      "minimized_text": "Nurse with experience caring for patients in a hospital unit. Monitors vital signs, administers prescribed medication and records patient progress. Provides nursing care, guides patients and families and communicates changes to the responsible team. Participates in care planning, monitors patient safety and organizes continuity of care. Keeps clinical records updated and collaborates with other healthcare professionals in patient treatment and recovery.",
+      "cleaned_text_at_tfidf": "nurse with experience caring for patients in a hospital unit. monitors vital signs administers prescribed medication and records patient progress. provides nursing care guides patients and families and communicates changes to the responsible team. participates in care planning monitors patient safety and organizes continuity of care. keeps clinical records updated and collaborates with other healthcare professionals in patient treatment and recovery.",
+      "redactions": 0,
+      "prediction": "HEALTHCARE",
+      "top3": [
+        {
+          "category": "HEALTHCARE",
+          "probability": 0.4633333333333333
+        },
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.13666666666666666
+        },
+        {
+          "category": "ADVOCATE",
+          "probability": 0.09666666666666666
+        }
+      ],
+      "expected_probability": 0.4633333333333333,
+      "it_probability": 0.006666666666666667,
+      "probabilities": {
+        "ACCOUNTANT": 0.0033333333333333335,
+        "ADVOCATE": 0.09666666666666666,
+        "AGRICULTURE": 0.016666666666666666,
+        "APPAREL": 0.01,
+        "ARTS": 0.03333333333333333,
+        "AUTOMOBILE": 0.006666666666666667,
+        "AVIATION": 0.03666666666666667,
+        "BANKING": 0.03333333333333333,
+        "BPO": 0.0033333333333333335,
+        "BUSINESS-DEVELOPMENT": 0.13666666666666666,
+        "CHEF": 0.01,
+        "CONSTRUCTION": 0.02,
+        "CONSULTANT": 0.02666666666666667,
+        "DESIGNER": 0.01,
+        "DIGITAL-MEDIA": 0.0033333333333333335,
+        "ENGINEERING": 0.006666666666666667,
+        "FINANCE": 0.013333333333333334,
+        "FITNESS": 0.016666666666666666,
+        "HEALTHCARE": 0.4633333333333333,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.006666666666666667,
+        "PUBLIC-RELATIONS": 0.006666666666666667,
+        "SALES": 0.013333333333333334,
+        "TEACHER": 0.023333333333333334
+      },
+      "active_features": 35,
+      "analyzed_unique_unigrams": 37,
+      "known_unique_unigrams": 33,
+      "unigram_coverage": 0.8918918918918919,
+      "unknown_unigrams": [
+        "administers",
+        "collaborates",
+        "keeps",
+        "organizes"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "monitors",
+          "weight": 0.3022451731190392
+        },
+        {
+          "feature": "patient",
+          "weight": 0.2620266915150426
+        },
+        {
+          "feature": "patients",
+          "weight": 0.22341725964998377
+        },
+        {
+          "feature": "care",
+          "weight": 0.21793177924771528
+        },
+        {
+          "feature": "patients families",
+          "weight": 0.21019022091099707
+        },
+        {
+          "feature": "vital signs",
+          "weight": 0.20874740021686428
+        },
+        {
+          "feature": "caring",
+          "weight": 0.20735521538987237
+        },
+        {
+          "feature": "communicates",
+          "weight": 0.20104461050055647
+        },
+        {
+          "feature": "participates",
+          "weight": 0.1987769535155563
+        },
+        {
+          "feature": "guides",
+          "weight": 0.1966319340208516
+        },
+        {
+          "feature": "prescribed",
+          "weight": 0.19560140344409233
+        },
+        {
+          "feature": "continuity",
+          "weight": 0.18992413555226734
+        },
+        {
+          "feature": "nurse",
+          "weight": 0.1857441471092063
+        },
+        {
+          "feature": "medication",
+          "weight": 0.18343243326624248
+        },
+        {
+          "feature": "signs",
+          "weight": 0.18343243326624248
+        },
+        {
+          "feature": "vital",
+          "weight": 0.18124803590575486
+        },
+        {
+          "feature": "nursing",
+          "weight": 0.1611238941564705
+        },
+        {
+          "feature": "families",
+          "weight": 0.1533960186369119
+        },
+        {
+          "feature": "records",
+          "weight": 0.1517309652130044
+        },
+        {
+          "feature": "recovery",
+          "weight": 0.15003186897384602
+        },
+        {
+          "feature": "treatment",
+          "weight": 0.14489585363135649
+        },
+        {
+          "feature": "clinical",
+          "weight": 0.14242405942384964
+        },
+        {
+          "feature": "hospital",
+          "weight": 0.137899430287085
+        },
+        {
+          "feature": "provides",
+          "weight": 0.1376625746789768
+        },
+        {
+          "feature": "professionals",
+          "weight": 0.1351464280951131
+        },
+        {
+          "feature": "healthcare",
+          "weight": 0.1257214964407562
+        },
+        {
+          "feature": "updated",
+          "weight": 0.11811134103003779
+        },
+        {
+          "feature": "progress",
+          "weight": 0.11782385284073472
+        },
+        {
+          "feature": "unit",
+          "weight": 0.11739648932024709
+        },
+        {
+          "feature": "changes",
+          "weight": 0.10314699495707458
+        },
+        {
+          "feature": "safety",
+          "weight": 0.0939199916764575
+        },
+        {
+          "feature": "planning",
+          "weight": 0.07390560071636774
+        },
+        {
+          "feature": "responsible",
+          "weight": 0.07178550626898617
+        },
+        {
+          "feature": "team",
+          "weight": 0.0504130135544419
+        },
+        {
+          "feature": "experience",
+          "weight": 0.04103471510735751
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 241,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "sales-medium-pt",
+      "area": "sales",
+      "language": "pt",
+      "detail": "medium",
+      "expected": "SALES",
+      "text": "Profissional de vendas com experiência no atendimento comercial e na negociação com clientes. Prospecta clientes, identifica necessidades e apresenta produtos e propostas comerciais. Acompanha oportunidades de venda, negocia condições e realiza o acompanhamento de pedidos. Mantém relacionamento com clientes existentes e registra o andamento das negociações. Acompanha metas de vendas e prepara relatórios sobre os resultados comerciais. Atua no atendimento após a venda e no acompanhamento da satisfação dos clientes.",
+      "control": false,
+      "words": 70,
+      "characters": 519,
+      "minimized_text": "Profissional de vendas com experiência no atendimento comercial e na negociação com clientes. Prospecta clientes, identifica necessidades e apresenta produtos e propostas comerciais. Acompanha oportunidades de venda, negocia condições e realiza o acompanhamento de pedidos. Mantém relacionamento com clientes existentes e registra o andamento das negociações. Acompanha metas de vendas e prepara relatórios sobre os resultados comerciais. Atua no atendimento após a venda e no acompanhamento da satisfação dos clientes.",
+      "cleaned_text_at_tfidf": "profissional de vendas com experiência no atendimento comercial e na negociação com clientes. prospecta clientes identifica necessidades e apresenta produtos e propostas comerciais. acompanha oportunidades de venda negocia condições e realiza o acompanhamento de pedidos. mantém relacionamento com clientes existentes e registra o andamento das negociações. acompanha metas de vendas e prepara relatórios sobre os resultados comerciais. atua no atendimento após a venda e no acompanhamento da satisfação dos clientes.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.62
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06666666666666667
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.03
+        }
+      ],
+      "expected_probability": 0.006666666666666667,
+      "it_probability": 0.01,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.01,
+        "AGRICULTURE": 0.02,
+        "APPAREL": 0.016666666666666666,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.06666666666666667,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.62,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.03,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.006666666666666667,
+        "ENGINEERING": 0.02,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.01,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.01,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 3,
+      "analyzed_unique_unigrams": 42,
+      "known_unique_unigrams": 3,
+      "unigram_coverage": 0.07142857142857142,
+      "unknown_unigrams": [
+        "acompanha",
+        "acompanhamento",
+        "andamento",
+        "apresenta",
+        "após",
+        "atendimento",
+        "atua",
+        "clientes",
+        "comerciais",
+        "comercial",
+        "condições",
+        "da",
+        "das",
+        "existentes",
+        "experiência",
+        "identifica",
+        "mantém",
+        "metas",
+        "na",
+        "necessidades",
+        "negocia",
+        "negociação",
+        "negociações",
+        "oportunidades",
+        "pedidos",
+        "prepara",
+        "produtos",
+        "profissional",
+        "propostas",
+        "prospecta",
+        "realiza",
+        "registra",
+        "relacionamento",
+        "relatórios",
+        "resultados",
+        "satisfação",
+        "sobre",
+        "venda",
+        "vendas"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "com",
+          "weight": 0.7422920309490033
+        },
+        {
+          "feature": "dos",
+          "weight": 0.5130092611873877
+        },
+        {
+          "feature": "os",
+          "weight": 0.43107312456887703
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 3,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "sales-medium-en",
+      "area": "sales",
+      "language": "en",
+      "detail": "medium",
+      "expected": "SALES",
+      "text": "Sales professional with experience in commercial service and customer negotiation. Prospects customers, identifies needs and presents products and commercial proposals. Tracks sales opportunities, negotiates terms and follows orders. Maintains relationships with existing customers and records negotiation progress. Tracks sales targets and prepares reports on commercial results. Works in after-sales service and follows customer satisfaction.",
+      "control": false,
+      "words": 54,
+      "characters": 444,
+      "minimized_text": "Sales professional with experience in commercial service and customer negotiation. Prospects customers, identifies needs and presents products and commercial proposals. Tracks sales opportunities, negotiates terms and follows orders. Maintains relationships with existing customers and records negotiation progress. Tracks sales targets and prepares reports on commercial results. Works in after-sales service and follows customer satisfaction.",
+      "cleaned_text_at_tfidf": "sales professional with experience in commercial service and customer negotiation. prospects customers identifies needs and presents products and commercial proposals. tracks sales opportunities negotiates terms and follows orders. maintains relationships with existing customers and records negotiation progress. tracks sales targets and prepares reports on commercial results. works in after sales service and follows customer satisfaction.",
+      "redactions": 0,
+      "prediction": "SALES",
+      "top3": [
+        {
+          "category": "SALES",
+          "probability": 0.2866666666666667
+        },
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.24
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06
+        }
+      ],
+      "expected_probability": 0.2866666666666667,
+      "it_probability": 0.013333333333333334,
+      "probabilities": {
+        "ACCOUNTANT": 0.006666666666666667,
+        "ADVOCATE": 0.03333333333333333,
+        "AGRICULTURE": 0.013333333333333334,
+        "APPAREL": 0.056666666666666664,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.03,
+        "AVIATION": 0.06,
+        "BANKING": 0.043333333333333335,
+        "BPO": 0.01,
+        "BUSINESS-DEVELOPMENT": 0.24,
+        "CHEF": 0.0033333333333333335,
+        "CONSTRUCTION": 0.04,
+        "CONSULTANT": 0.02,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.01,
+        "ENGINEERING": 0.02,
+        "FINANCE": 0.01,
+        "FITNESS": 0.02666666666666667,
+        "HEALTHCARE": 0.023333333333333334,
+        "HR": 0.006666666666666667,
+        "INFORMATION-TECHNOLOGY": 0.013333333333333334,
+        "PUBLIC-RELATIONS": 0.0033333333333333335,
+        "SALES": 0.2866666666666667,
+        "TEACHER": 0.0
+      },
+      "active_features": 37,
+      "analyzed_unique_unigrams": 31,
+      "known_unique_unigrams": 29,
+      "unigram_coverage": 0.9354838709677419,
+      "unknown_unigrams": [
+        "negotiates",
+        "presents"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "tracks",
+          "weight": 0.37442123972439256
+        },
+        {
+          "feature": "follows",
+          "weight": 0.37115800308239766
+        },
+        {
+          "feature": "commercial",
+          "weight": 0.24924913412987815
+        },
+        {
+          "feature": "negotiation",
+          "weight": 0.2423886129020824
+        },
+        {
+          "feature": "sales targets",
+          "weight": 0.21393710830910412
+        },
+        {
+          "feature": "sales opportunities",
+          "weight": 0.20135747680955868
+        },
+        {
+          "feature": "identifies",
+          "weight": 0.19903314603491942
+        },
+        {
+          "feature": "sales professional",
+          "weight": 0.19090153151052006
+        },
+        {
+          "feature": "existing customers",
+          "weight": 0.18738790774807149
+        },
+        {
+          "feature": "sales service",
+          "weight": 0.18339438601475747
+        },
+        {
+          "feature": "prepares",
+          "weight": 0.17519216874276775
+        },
+        {
+          "feature": "prospects",
+          "weight": 0.16737761137057683
+        },
+        {
+          "feature": "service customer",
+          "weight": 0.16398269402019333
+        },
+        {
+          "feature": "sales",
+          "weight": 0.15497193522565073
+        },
+        {
+          "feature": "targets",
+          "weight": 0.15415862351555126
+        },
+        {
+          "feature": "terms",
+          "weight": 0.15273496577213833
+        },
+        {
+          "feature": "maintains",
+          "weight": 0.14570803475120533
+        },
+        {
+          "feature": "proposals",
+          "weight": 0.13262619353755445
+        },
+        {
+          "feature": "works",
+          "weight": 0.13118208710103935
+        },
+        {
+          "feature": "customers",
+          "weight": 0.12459380449734311
+        },
+        {
+          "feature": "customer satisfaction",
+          "weight": 0.11876854789984329
+        },
+        {
+          "feature": "progress",
+          "weight": 0.11731609653681532
+        },
+        {
+          "feature": "professional experience",
+          "weight": 0.10503577505613941
+        },
+        {
+          "feature": "existing",
+          "weight": 0.10472350286266265
+        },
+        {
+          "feature": "satisfaction",
+          "weight": 0.1026041012079436
+        },
+        {
+          "feature": "opportunities",
+          "weight": 0.10096796514163037
+        },
+        {
+          "feature": "customer",
+          "weight": 0.09563820571488334
+        },
+        {
+          "feature": "orders",
+          "weight": 0.0948652041284884
+        },
+        {
+          "feature": "service",
+          "weight": 0.09471282930103087
+        },
+        {
+          "feature": "records",
+          "weight": 0.08922856178811528
+        },
+        {
+          "feature": "results",
+          "weight": 0.08881054490573023
+        },
+        {
+          "feature": "relationships",
+          "weight": 0.08580893237764461
+        },
+        {
+          "feature": "products",
+          "weight": 0.08219021858618944
+        },
+        {
+          "feature": "needs",
+          "weight": 0.07103180084206619
+        },
+        {
+          "feature": "reports",
+          "weight": 0.06830053776885255
+        },
+        {
+          "feature": "professional",
+          "weight": 0.052338780162480385
+        },
+        {
+          "feature": "experience",
+          "weight": 0.040857877949405624
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 221,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    }
+  ],
+  "controls": [
+    {
+      "id": "software-repeated8-pt",
+      "area": "software",
+      "language": "pt",
+      "detail": "repeat8",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Desenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.",
+      "control": true,
+      "words": 240,
+      "characters": 1711,
+      "minimized_text": "Desenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.\nDesenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais.",
+      "cleaned_text_at_tfidf": "desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais. desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais. desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais. desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais. desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais. desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais. desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais. desenvolvedora de software com dois anos de experiência em java spring boot postgresql e apis rest. experiência com git testes unitários junit e docker. participação no desenvolvimento de sistemas empresariais.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.58
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06333333333333334
+        },
+        {
+          "category": "CONSULTANT",
+          "probability": 0.03666666666666667
+        }
+      ],
+      "expected_probability": 0.02,
+      "it_probability": 0.02,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.013333333333333334,
+        "AGRICULTURE": 0.016666666666666666,
+        "APPAREL": 0.02666666666666667,
+        "ARTS": 0.03333333333333333,
+        "AUTOMOBILE": 0.013333333333333334,
+        "AVIATION": 0.06333333333333334,
+        "BANKING": 0.02,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.58,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.023333333333333334,
+        "CONSULTANT": 0.03666666666666667,
+        "DESIGNER": 0.006666666666666667,
+        "DIGITAL-MEDIA": 0.013333333333333334,
+        "ENGINEERING": 0.03333333333333333,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.006666666666666667,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.02,
+        "PUBLIC-RELATIONS": 0.013333333333333334,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 5,
+      "analyzed_unique_unigrams": 22,
+      "known_unique_unigrams": 5,
+      "unigram_coverage": 0.22727272727272727,
+      "unknown_unigrams": [
+        "anos",
+        "apis",
+        "boot",
+        "desenvolvedora",
+        "desenvolvimento",
+        "docker",
+        "dois",
+        "em",
+        "empresariais",
+        "experiência",
+        "git",
+        "junit",
+        "participação",
+        "postgresql",
+        "sistemas",
+        "testes",
+        "unitários"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "rest",
+          "weight": 0.5556281817548049
+        },
+        {
+          "feature": "com",
+          "weight": 0.47288447512208454
+        },
+        {
+          "feature": "java",
+          "weight": 0.46512866176710244
+        },
+        {
+          "feature": "spring",
+          "weight": 0.45527619627723964
+        },
+        {
+          "feature": "software",
+          "weight": 0.20984877872990593
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 24,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "software-repeated8-en",
+      "area": "software",
+      "language": "en",
+      "detail": "repeat8",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Software developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.",
+      "control": true,
+      "words": 240,
+      "characters": 1615,
+      "minimized_text": "Software developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.\nSoftware developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems.",
+      "cleaned_text_at_tfidf": "software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems. software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems. software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems. software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems. software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems. software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems. software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems. software developer with two years of experience in java spring boot postgresql and rest apis. experience with git junit unit tests and docker. participation in the development of enterprise systems.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.38666666666666666
+        },
+        {
+          "category": "ENGINEERING",
+          "probability": 0.09
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.08
+        }
+      ],
+      "expected_probability": 0.06666666666666667,
+      "it_probability": 0.06666666666666667,
+      "probabilities": {
+        "ACCOUNTANT": 0.016666666666666666,
+        "ADVOCATE": 0.013333333333333334,
+        "AGRICULTURE": 0.05,
+        "APPAREL": 0.04,
+        "ARTS": 0.02666666666666667,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.08,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.38666666666666666,
+        "CHEF": 0.01,
+        "CONSTRUCTION": 0.016666666666666666,
+        "CONSULTANT": 0.04666666666666667,
+        "DESIGNER": 0.016666666666666666,
+        "DIGITAL-MEDIA": 0.006666666666666667,
+        "ENGINEERING": 0.09,
+        "FINANCE": 0.01,
+        "FITNESS": 0.016666666666666666,
+        "HEALTHCARE": 0.02,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.06666666666666667,
+        "PUBLIC-RELATIONS": 0.006666666666666667,
+        "SALES": 0.02,
+        "TEACHER": 0.016666666666666666
+      },
+      "active_features": 14,
+      "analyzed_unique_unigrams": 19,
+      "known_unique_unigrams": 13,
+      "unigram_coverage": 0.6842105263157895,
+      "unknown_unigrams": [
+        "apis",
+        "boot",
+        "docker",
+        "git",
+        "junit",
+        "postgresql"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "rest",
+          "weight": 0.43137362878537266
+        },
+        {
+          "feature": "java",
+          "weight": 0.3611124224204708
+        },
+        {
+          "feature": "spring",
+          "weight": 0.3534632535510625
+        },
+        {
+          "feature": "developer",
+          "weight": 0.33129239275831923
+        },
+        {
+          "feature": "participation",
+          "weight": 0.3154394398910049
+        },
+        {
+          "feature": "tests",
+          "weight": 0.2919736892995899
+        },
+        {
+          "feature": "enterprise",
+          "weight": 0.2711787835931798
+        },
+        {
+          "feature": "unit",
+          "weight": 0.23748319124665093
+        },
+        {
+          "feature": "years experience",
+          "weight": 0.20845777727078027
+        },
+        {
+          "feature": "software",
+          "weight": 0.16292051438248603
+        },
+        {
+          "feature": "systems",
+          "weight": 0.14368729851537024
+        },
+        {
+          "feature": "years",
+          "weight": 0.13743490760301538
+        },
+        {
+          "feature": "development",
+          "weight": 0.11942758733137035
+        },
+        {
+          "feature": "experience",
+          "weight": 0.10169431775853909
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 129,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "zero-oov",
+      "area": "control",
+      "language": "n/a",
+      "detail": "none",
+      "expected": null,
+      "text": "zzqxv zzqxv",
+      "control": true,
+      "words": 2,
+      "characters": 11,
+      "minimized_text": "zzqxv zzqxv",
+      "cleaned_text_at_tfidf": "zzqxv zzqxv",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.6266666666666667
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06666666666666667
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.03
+        }
+      ],
+      "expected_probability": null,
+      "it_probability": 0.01,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.01,
+        "AGRICULTURE": 0.02,
+        "APPAREL": 0.02,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.06666666666666667,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.6266666666666667,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.02666666666666667,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.0033333333333333335,
+        "ENGINEERING": 0.02,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.01,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.01,
+        "PUBLIC-RELATIONS": 0.01,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 0,
+      "analyzed_unique_unigrams": 1,
+      "known_unique_unigrams": 0,
+      "unigram_coverage": 0.0,
+      "unknown_unigrams": [
+        "zzqxv"
+      ],
+      "all_active_tfidf": [],
+      "trees_with_different_leaf_vs_zero": 0,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "zero-stopwords",
+      "area": "control",
+      "language": "n/a",
+      "detail": "none",
+      "expected": null,
+      "text": "the and or the and",
+      "control": true,
+      "words": 5,
+      "characters": 18,
+      "minimized_text": "the and or the and",
+      "cleaned_text_at_tfidf": "the and or the and",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.6266666666666667
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06666666666666667
+        },
+        {
+          "category": "ARTS",
+          "probability": 0.03
+        }
+      ],
+      "expected_probability": null,
+      "it_probability": 0.01,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.01,
+        "AGRICULTURE": 0.02,
+        "APPAREL": 0.02,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.06666666666666667,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.6266666666666667,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.02666666666666667,
+        "DESIGNER": 0.013333333333333334,
+        "DIGITAL-MEDIA": 0.0033333333333333335,
+        "ENGINEERING": 0.02,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.01,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.01,
+        "PUBLIC-RELATIONS": 0.01,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 0,
+      "analyzed_unique_unigrams": 0,
+      "known_unique_unigrams": 0,
+      "unigram_coverage": null,
+      "unknown_unigrams": [],
+      "all_active_tfidf": [],
+      "trees_with_different_leaf_vs_zero": 0,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    },
+    {
+      "id": "technical-terms-only",
+      "area": "software",
+      "language": "n/a",
+      "detail": "keywords",
+      "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Java, Spring Boot, PostgreSQL, APIs REST, Git, JUnit, Docker.",
+      "control": true,
+      "words": 9,
+      "characters": 61,
+      "minimized_text": "Java, Spring Boot, PostgreSQL, APIs REST, Git, JUnit, Docker.",
+      "cleaned_text_at_tfidf": "java spring boot postgresql apis rest git junit docker.",
+      "redactions": 0,
+      "prediction": "BUSINESS-DEVELOPMENT",
+      "top3": [
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "probability": 0.6233333333333333
+        },
+        {
+          "category": "AVIATION",
+          "probability": 0.06666666666666667
+        },
+        {
+          "category": "CONSULTANT",
+          "probability": 0.03333333333333333
+        }
+      ],
+      "expected_probability": 0.01,
+      "it_probability": 0.01,
+      "probabilities": {
+        "ACCOUNTANT": 0.013333333333333334,
+        "ADVOCATE": 0.01,
+        "AGRICULTURE": 0.02,
+        "APPAREL": 0.02,
+        "ARTS": 0.03,
+        "AUTOMOBILE": 0.01,
+        "AVIATION": 0.06666666666666667,
+        "BANKING": 0.016666666666666666,
+        "BPO": 0.013333333333333334,
+        "BUSINESS-DEVELOPMENT": 0.6233333333333333,
+        "CHEF": 0.013333333333333334,
+        "CONSTRUCTION": 0.02666666666666667,
+        "CONSULTANT": 0.03333333333333333,
+        "DESIGNER": 0.01,
+        "DIGITAL-MEDIA": 0.0033333333333333335,
+        "ENGINEERING": 0.023333333333333334,
+        "FINANCE": 0.006666666666666667,
+        "FITNESS": 0.006666666666666667,
+        "HEALTHCARE": 0.016666666666666666,
+        "HR": 0.0033333333333333335,
+        "INFORMATION-TECHNOLOGY": 0.01,
+        "PUBLIC-RELATIONS": 0.01,
+        "SALES": 0.006666666666666667,
+        "TEACHER": 0.006666666666666667
+      },
+      "active_features": 3,
+      "analyzed_unique_unigrams": 9,
+      "known_unique_unigrams": 3,
+      "unigram_coverage": 0.3333333333333333,
+      "unknown_unigrams": [
+        "apis",
+        "boot",
+        "docker",
+        "git",
+        "junit",
+        "postgresql"
+      ],
+      "all_active_tfidf": [
+        {
+          "feature": "rest",
+          "weight": 0.6492721455259486
+        },
+        {
+          "feature": "java",
+          "weight": 0.5435200986698842
+        },
+        {
+          "feature": "spring",
+          "weight": 0.5320071271947502
+        }
+      ],
+      "trees_with_different_leaf_vs_zero": 3,
+      "raw_vs_clean_probability_l1": 0.0,
+      "clean_vs_minimized_probability_l1": 0.0
+    }
+  ],
+  "original_hashes_before": {
+    "models\\classificador.joblib": "6eab51bf59878be2c57f158581f1247580b05e33a98eb973075cf3a8b2ae6294",
+    "models\\comparacao_modelos.csv": "daa5b064887386f4256a0514609968237b8cefda54339507818a97be6e127566",
+    "models\\matriz_confusao.png": "c8b8c5aa62c1909be9634029f9647465a8c35d9a4f0e061fefdf6b98b5efd37c"
+  },
+  "original_hashes_after": {
+    "models\\classificador.joblib": "6eab51bf59878be2c57f158581f1247580b05e33a98eb973075cf3a8b2ae6294",
+    "models\\comparacao_modelos.csv": "daa5b064887386f4256a0514609968237b8cefda54339507818a97be6e127566",
+    "models\\matriz_confusao.png": "c8b8c5aa62c1909be9634029f9647465a8c35d9a4f0e061fefdf6b98b5efd37c"
+  }
+}

@@ -1,0 +1,15 @@
+version: 1
+id: ce3223b0-e64c-431a-b93b-02e12576f263
+name: llm
+slug: llm
+protocol: http
+interceptRequests: true
+port: 4010
+scenarios:
+  - name: default
+    path: ./handler.js
+    default: true
+generatedFrom:
+  type: spec
+  mode: static
+  path: ../../../docs/llm-compatibility.openapi.json

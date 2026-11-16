@@ -1,0 +1,62 @@
+{
+  "notice": "Todos os textos são fictícios, definidos para diagnóstico, sem representatividade estatística. Variantes de software mantêm o mesmo conjunto técnico e dois anos de experiência.",
+  "job": "Buscamos pessoa desenvolvedora Java para atuar com Spring Boot, APIs REST, PostgreSQL e Git. São desejáveis conhecimentos em Angular, AWS, Docker, testes automatizados e metodologias ágeis.",
+  "cases": [
+    {
+      "id": "software-short-pt", "area": "software", "language": "pt", "detail": "short", "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Desenvolvedora de software com dois anos de experiência em Java, Spring Boot, PostgreSQL e APIs REST. Experiência com Git, testes unitários JUnit e Docker. Participação no desenvolvimento de sistemas empresariais."
+    },
+    {
+      "id": "software-short-en", "area": "software", "language": "en", "detail": "short", "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Software developer with two years of experience in Java, Spring Boot, PostgreSQL and REST APIs. Experience with Git, JUnit unit tests and Docker. Participation in the development of enterprise systems."
+    },
+    {
+      "id": "software-medium-pt", "area": "software", "language": "pt", "detail": "medium", "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. Utiliza Java e Spring Boot para implementar funcionalidades e APIs REST. Trabalha com PostgreSQL para consultar e persistir os dados utilizados pelos sistemas. Utiliza Git para registrar alterações e colaborar na revisão do código. Escreve testes unitários com JUnit e utiliza Docker para executar os sistemas em ambientes consistentes. Suas responsabilidades incluem compreender solicitações dos usuários, implementar alterações no software, investigar defeitos e verificar o comportamento das funcionalidades. Participa da manutenção de módulos existentes e acompanha a integração entre as APIs REST e os dados em PostgreSQL."
+    },
+    {
+      "id": "software-medium-en", "area": "software", "language": "en", "detail": "medium", "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Software developer with two years of experience developing and maintaining enterprise systems. Uses Java and Spring Boot to implement features and REST APIs. Works with PostgreSQL to query and persist data used by the systems. Uses Git to record changes and collaborate on code reviews. Writes unit tests with JUnit and uses Docker to run systems in consistent environments. Responsibilities include understanding user requests, implementing software changes, investigating defects and checking feature behavior. Participates in maintaining existing modules and follows the integration between REST APIs and data in PostgreSQL."
+    },
+    {
+      "id": "software-long-pt", "area": "software", "language": "pt", "detail": "long", "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Desenvolvedora de software com dois anos de experiência no desenvolvimento e na manutenção de sistemas empresariais. Sua atuação utiliza Java, Spring Boot, PostgreSQL, APIs REST, Git, testes unitários JUnit e Docker. No cotidiano, compreende solicitações dos usuários, lê o código existente e implementa mudanças nas funcionalidades. Investiga defeitos, reproduz situações relatadas e verifica se as correções preservam o comportamento esperado. No projeto fictício de um sistema de solicitações internas, participou da implementação de funcionalidades em Java e Spring Boot. As APIs REST recebem e retornam os dados usados pelos módulos. O PostgreSQL mantém os registros consultados e atualizados pelo sistema. Os testes unitários JUnit verificam o comportamento das partes alteradas. O Git registra o histórico das mudanças e permite a revisão do código com a equipe. O Docker é utilizado para executar o sistema em ambientes consistentes. Em outro projeto fictício, participou da manutenção de um sistema empresarial existente. Leu os módulos em Java, ajustou funcionalidades em Spring Boot e acompanhou as chamadas às APIs REST. Consultou e persistiu dados em PostgreSQL para verificar solicitações e seus resultados. Acrescentou testes unitários JUnit para as alterações, registrou as mudanças no Git e conferiu a execução com Docker. Suas responsabilidades incluem explicar as mudanças realizadas, revisar o comportamento das funcionalidades e acompanhar a integração dos módulos. Esses projetos descrevem a mesma experiência de dois anos, sem acrescentar períodos de trabalho ou tecnologias diferentes."
+    },
+    {
+      "id": "software-long-en", "area": "software", "language": "en", "detail": "long", "expected": "INFORMATION-TECHNOLOGY",
+      "text": "Software developer with two years of experience developing and maintaining enterprise systems. Her work uses Java, Spring Boot, PostgreSQL, REST APIs, Git, JUnit unit tests and Docker. In daily work, she understands user requests, reads existing code and implements feature changes. She investigates defects, reproduces reported situations and checks that corrections preserve expected behavior. In the fictional project for an internal request system, she participated in implementing features in Java and Spring Boot. REST APIs receive and return data used by the modules. PostgreSQL stores the records queried and updated by the system. JUnit unit tests check the behavior of the modified parts. Git records the history of changes and enables code review with the team. Docker is used to run the system in consistent environments. In another fictional project, she participated in maintaining an existing enterprise system. She read the Java modules, adjusted Spring Boot features and followed calls to REST APIs. She queried and persisted data in PostgreSQL to check requests and their results. She added JUnit unit tests for the changes, recorded the changes in Git and checked execution with Docker. Her responsibilities include explaining the changes made, reviewing feature behavior and following module integration. These projects describe the same two years of experience, without adding employment periods or different technologies."
+    },
+    {
+      "id": "hr-medium-pt", "area": "hr", "language": "pt", "detail": "medium", "expected": "HR",
+      "text": "Analista de recursos humanos com experiência em recrutamento, seleção e integração de funcionários. Conduz entrevistas, organiza processos seletivos e acompanha a admissão de profissionais. Mantém registros de pessoal, acompanha benefícios e esclarece dúvidas sobre políticas internas. Participa de treinamentos e acompanha o desenvolvimento de funcionários. Apoia gestores na avaliação de desempenho e no acompanhamento das necessidades das equipes. Prepara comunicações internas e mantém os documentos dos processos de recursos humanos organizados."
+    },
+    {
+      "id": "hr-medium-en", "area": "hr", "language": "en", "detail": "medium", "expected": "HR",
+      "text": "Human resources analyst with experience in recruitment, selection and employee onboarding. Conducts interviews, organizes hiring processes and follows the admission of professionals. Maintains personnel records, monitors benefits and answers questions about internal policies. Participates in training and follows employee development. Supports managers in performance reviews and in tracking team needs. Prepares internal communications and keeps human resources process documents organized."
+    },
+    {
+      "id": "finance-medium-pt", "area": "finance", "language": "pt", "detail": "medium", "expected": "FINANCE",
+      "text": "Analista financeiro com experiência em planejamento financeiro, elaboração de orçamentos e análise de fluxo de caixa. Acompanha receitas e despesas, compara resultados com o orçamento e investiga variações. Prepara projeções financeiras e relatórios para apoiar decisões de gestão. Avalia custos e acompanha indicadores financeiros da operação. Revisa previsões de caixa e consolida informações para o planejamento financeiro periódico. Apresenta análises de resultados, riscos financeiros e necessidades de recursos aos responsáveis pela gestão."
+    },
+    {
+      "id": "finance-medium-en", "area": "finance", "language": "en", "detail": "medium", "expected": "FINANCE",
+      "text": "Financial analyst with experience in financial planning, budgeting and cash flow analysis. Monitors revenue and expenses, compares results with the budget and investigates variances. Prepares financial forecasts and reports to support management decisions. Evaluates costs and monitors financial indicators for operations. Reviews cash forecasts and consolidates information for periodic financial planning. Presents analyses of results, financial risks and resource needs to management."
+    },
+    {
+      "id": "health-medium-pt", "area": "health", "language": "pt", "detail": "medium", "expected": "HEALTHCARE",
+      "text": "Enfermeira com experiência no cuidado de pacientes em unidade hospitalar. Acompanha sinais vitais, administra medicamentos prescritos e registra a evolução dos pacientes. Realiza cuidados de enfermagem, orienta pacientes e familiares e comunica alterações à equipe responsável. Participa do planejamento dos cuidados, acompanha a segurança do paciente e organiza a continuidade da assistência. Mantém registros clínicos atualizados e colabora com outros profissionais de saúde no atendimento e na recuperação dos pacientes."
+    },
+    {
+      "id": "health-medium-en", "area": "health", "language": "en", "detail": "medium", "expected": "HEALTHCARE",
+      "text": "Nurse with experience caring for patients in a hospital unit. Monitors vital signs, administers prescribed medication and records patient progress. Provides nursing care, guides patients and families and communicates changes to the responsible team. Participates in care planning, monitors patient safety and organizes continuity of care. Keeps clinical records updated and collaborates with other healthcare professionals in patient treatment and recovery."
+    },
+    {
+      "id": "sales-medium-pt", "area": "sales", "language": "pt", "detail": "medium", "expected": "SALES",
+      "text": "Profissional de vendas com experiência no atendimento comercial e na negociação com clientes. Prospecta clientes, identifica necessidades e apresenta produtos e propostas comerciais. Acompanha oportunidades de venda, negocia condições e realiza o acompanhamento de pedidos. Mantém relacionamento com clientes existentes e registra o andamento das negociações. Acompanha metas de vendas e prepara relatórios sobre os resultados comerciais. Atua no atendimento após a venda e no acompanhamento da satisfação dos clientes."
+    },
+    {
+      "id": "sales-medium-en", "area": "sales", "language": "en", "detail": "medium", "expected": "SALES",
+      "text": "Sales professional with experience in commercial service and customer negotiation. Prospects customers, identifies needs and presents products and commercial proposals. Tracks sales opportunities, negotiates terms and follows orders. Maintains relationships with existing customers and records negotiation progress. Tracks sales targets and prepares reports on commercial results. Works in after-sales service and follows customer satisfaction."
+    }
+  ]
+}

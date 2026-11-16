@@ -1,0 +1,8 @@
+# Aspectos eticos e responsabilidade (TDE2)
+
+- **Privacidade:** currículos contêm dados pessoais. A versão 2.0 não os armazena permanentemente; uploads podem passar por arquivos temporários do framework. Antes do LLM, currículo e vaga passam por minimização com regras, que não garantem anonimização completa. O provedor externo tem políticas próprias. Detalhes efetivos em [docs/etica.md](docs/etica.md).
+- **Segurança:** chave da API apenas no backend e `.env` ignorado pelo Git. A minimização ocorre no payload, além das orientações do prompt. Respostas são validadas e citações conferidas; logs não registram currículos, nomes de arquivo ou chaves. Essas medidas não eliminam os riscos de dados pessoais em texto livre e prompt injection.
+- **Transparencia:** o sistema mostra a area prevista com probabilidade, a nota com justificativa e os criterios usados; o usuario sabe que ha IA envolvida.
+- **Vieses:** o dataset (Kaggle, em ingles, poucos perfis) pode refletir vieses historicos de genero, instituicao e area. O modelo de ML aprende o que e frequente no dataset, e o LLM pode herdar vieses do pre-treino. Mitigacao: instrucao para ignorar atributos sensiveis, auditoria por amostragem e comparacao de notas entre perfis equivalentes.
+- **Impacto nos usuarios:** uma nota baixa pode excluir candidatos injustamente. O sistema e apenas apoio; a decisao final e humana, com direito a revisao (LGPD art. 20).
+- **Limitacoes:** alucinacoes do LLM; PDFs com layout complexo ou imagem (sem OCR) perdem texto; dataset em ingles; categorias fixas; curriculos atipicos sao mal classificados; custo e latencia da API.

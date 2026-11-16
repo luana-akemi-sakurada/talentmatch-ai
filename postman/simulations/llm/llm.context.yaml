@@ -1,0 +1,30 @@
+purpose:
+  stands_in_for: Minimal Chat Completions HTTP envelope consumed by llm.py.
+  unblocks: Verify SDK serialization, response parsing and a provider outage without paid calls.
+assumptions:
+  - id: grounded-extraction-and-score-abstention
+    status: supported
+    claim: The updated adapter accepts the local structured-evidence fixture, publishes a null score with score_not_validated, and still handles invalid JSON and HTTP 503.
+    reason: Real SDK requests reached the updated local stand-in; caller assertions and the three request events matched expectations. This covers the local contract, not provider semantics.
+    verification: On 2026-11-15 reran backend/tests/check_http_simulation.py with CLI 1.85.0 after updating handler.js. Observed success validated, invalid_llm_response and llm_unavailable; request events were two HTTP 200 and one HTTP 503. No external requests or paid calls.
+    source: llm.py; backend/app/services/grounding.py; backend/tests/check_http_simulation.py; postman/mocks/llm/handler.js; docs/confiabilidade.md
+    updated_at: '2026-11-15'
+  - id: sdk-http-path
+    status: supported
+    claim: The adapter handles synthetic success, invalid JSON and HTTP 503 in the scenarios exercised.
+    reason: The real SDK reached the local Postman stand-in on all three requests; parsing and error codes matched expectations.
+    verification: On 2026-11-15 ran backend/tests/check_http_simulation.py with CLI 1.85.0; success validated, invalid_llm_response and llm_unavailable observed. Server request events showed three POST requests, two 200 and one 503. The mock checks absence of the fixture name in the received user payload.
+    source: llm.py; backend/tests/check_http_simulation.py; postman/mocks/llm/handler.js
+    updated_at: '2026-11-15'
+  - id: provider-live-behavior
+    status: unknown
+    claim: The user's configured external provider accepts this request and produces accurate evidence-based analyses.
+    reason: No live or paid calls were made. The local mock is synthetic, generated from the minimal local contract and then adapted; published-owner search was skipped because CLI is signed out.
+    verification: Only the SDK transport, local stand-in and mock-based tests were exercised. Real credentials, model availability and provider policy remain unverified.
+    source: docs/llm-compatibility.openapi.json; docs/validacao.md
+    updated_at: '2026-11-15'
+fingerprints:
+  - id: local-evolution
+    date: '2026-11-15'
+    commit: null
+    cli: '1.85.0; local working directory has no Git metadata; no commit created'

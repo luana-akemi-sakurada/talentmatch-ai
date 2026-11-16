@@ -1,0 +1,16 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "Local Chat Completions stand-in", "version": "1.0.0", "description": "Minimal envelope consumed by llm.py. Not a full provider contract." },
+  "paths": {
+    "/v1/chat/completions": {
+      "post": {
+        "operationId": "complete",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["model", "messages"], "properties": { "model": {"type":"string"}, "messages": {"type":"array","items":{"type":"object"}} } } } } },
+        "responses": {
+          "200": { "description": "Completion envelope", "content": {"application/json":{"schema":{"type":"object"},"example":{"id":"local","choices":[{"message":{"role":"assistant","content":"{}"}}]}}}},
+          "503": { "description": "Provider unavailable" }
+        }
+      }
+    }
+  }
+}

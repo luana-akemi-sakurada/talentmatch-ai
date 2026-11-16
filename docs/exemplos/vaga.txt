@@ -1,0 +1,2 @@
+EXEMPLO FICTÍCIO — SOMENTE PARA DEMONSTRAÇÃO
+Analista de dados. Requisitos: Python, SQL e Power BI. Desejável experiência com AWS.
