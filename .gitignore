@@ -24,3 +24,6 @@ frontend/test-results/
 artifacts/
 *.log
 frontend/*.tsbuildinfo
+
+models/*.joblib
+artifacts/
