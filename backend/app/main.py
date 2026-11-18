@@ -16,7 +16,6 @@ from backend.app.services.files import extract
 
 logger = logging.getLogger('talentmatch')
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     try:
@@ -25,12 +24,8 @@ async def lifespan(app: FastAPI):
         logger.warning('model_unavailable_at_startup')
     yield
 
-
-app = FastAPI(title='TalentMatch AI', version='2.0.0', lifespan=lifespan,
-              description='Apoio à análise com revisão humana. Sem ranking ou rejeição automática.')
-app.add_middleware(CORSMiddleware, allow_origins=allowed_origins(),
-                   allow_methods=['GET', 'POST'], allow_headers=['Content-Type'])
-
+app = FastAPI(title='TalentMatch AI', version='2.0.0', lifespan=lifespan, description='Apoio à análise com revisão humana. Sem ranking ou rejeição automática.')
+app.add_middleware(CORSMiddleware, allow_origins=allowed_origins(), allow_methods=['GET', 'POST'], allow_headers=['Content-Type'])
 
 @app.middleware('http')
 async def privacy_headers(request: Request, call_next):
@@ -48,35 +43,32 @@ async def privacy_headers(request: Request, call_next):
     response.headers['X-Content-Type-Options'] = 'nosniff'
     return response
 
-
 @app.exception_handler(ServiceError)
 async def service_error(request: Request, exc: ServiceError):
     return JSONResponse(status_code=exc.status, content={'error': {'code': exc.code, 'message': exc.message}})
 
-
 @app.exception_handler(RequestValidationError)
 async def validation_error(request: Request, exc: RequestValidationError):
     return JSONResponse(status_code=422, content={'error': {'code': 'invalid_request', 'message': 'Campos inválidos. Verifique arquivo, modo, currículo e vaga.'}})
-
 
 @app.exception_handler(Exception)
 async def unexpected_error(request: Request, exc: Exception):
     logger.error('unhandled_error type=%s', type(exc).__name__)
     return JSONResponse(status_code=500, content={'error': {'code': 'internal_error', 'message': 'Falha interna ao processar a solicitação.'}})
 
-
 @app.get('/api/health')
 def health():
     try:
         model = load_model()
-        return {'status': 'ok', 'model_loaded': True, 'model_type': type(model.named_steps['clf']).__name__}
     except ServiceError:
         return JSONResponse(status_code=503, content={'status': 'degraded', 'model_loaded': False})
+    # Model metadata must not turn a successful load into HTTP 500.
+    estimators = getattr(model, 'calibrated_classifiers_', [])
+    estimator = getattr(estimators[0], 'estimator', None) if len(estimators) else model
+    classifier = getattr(estimator, 'named_steps', {}).get('clf', model)
+    return {'status': 'ok', 'model_loaded': True, 'model_type': type(classifier).__name__}
 
-
-ERROR_RESPONSES = {413: {'description': 'Tamanho excedido'}, 415: {'description': 'Formato inválido'},
-                   422: {'description': 'Entrada inválida'}, 503: {'description': 'Classificador indisponível'}}
-
+ERROR_RESPONSES = {413: {'description': 'Tamanho excedido'}, 415: {'description': 'Formato inválido'}, 422: {'description': 'Entrada inválida'}, 503: {'description': 'Classificador indisponível'}}
 
 async def read_resume(file: UploadFile) -> str:
     try:
@@ -85,27 +77,16 @@ async def read_resume(file: UploadFile) -> str:
     finally:
         await file.close()
 
-
 @app.post('/api/analyze', response_model=AnalysisResponse, responses=ERROR_RESPONSES)
-async def analyze_resume(job_description: Annotated[str, Form(min_length=1, max_length=16000)],
-                         mode: Annotated[Literal['live', 'demo'], Form()] = 'live',
-                         resume_text: Annotated[str, Form(max_length=40000)] = '',
-                         file: Annotated[UploadFile | None, File()] = None):
-    """ML real; mode=demo simula só o LLM. Falha do LLM retorna ML com llm=null e llm_error.
-
-    Envie arquivo OU texto. Até 5 MB, PDF textual sem senha (30 páginas) ou TXT UTF-8.
-    """
+async def analyze_resume(job_description: Annotated[str, Form(min_length=1, max_length=16000)], mode: Annotated[Literal['live', 'demo'], Form()] = 'live', resume_text: Annotated[str, Form(max_length=40000)] = '', file: Annotated[UploadFile | None, File()] = None):
     if file is not None and resume_text.strip():
         await file.close()
         raise ServiceError('ambiguous_resume', 'Envie um arquivo ou cole texto, apenas uma das opções.')
     text = await read_resume(file) if file else resume_text
     return await run_in_threadpool(analyze, text, job_description, mode, 'Candidato 1')
 
-
 @app.post('/api/compare', response_model=ComparisonResponse, responses=ERROR_RESPONSES)
-async def compare(job_description: Annotated[str, Form(min_length=1, max_length=16000)],
-                  files: Annotated[list[UploadFile], File()],
-                  mode: Annotated[Literal['live', 'demo'], Form()] = 'live'):
+async def compare(job_description: Annotated[str, Form(min_length=1, max_length=16000)], files: Annotated[list[UploadFile], File()], mode: Annotated[Literal['live', 'demo'], Form()] = 'live'):
     if not 2 <= len(files) <= MAX_CANDIDATES:
         for file in files:
             await file.close()
@@ -124,16 +105,13 @@ async def compare(job_description: Annotated[str, Form(min_length=1, max_length=
             await file.close()
     return ComparisonResponse(results=results, failures=failures)
 
-
 @app.get('/api/models/metrics')
 def model_metrics():
     return metrics()
 
-
 @app.get('/api/models/categories')
 def model_categories():
     return categories()
-
 
 @app.get('/api/models/confusion-matrix', responses={200: {'content': {'image/png': {}}}})
 def confusion_matrix():
