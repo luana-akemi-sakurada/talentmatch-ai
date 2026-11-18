@@ -1,0 +1,13 @@
+/* Página de ética: prefixo .et-* */
+.et-pledges { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.et-pledges li { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: #e3f0e8; border-radius: 12px; }
+.et-pledges strong { font-size: 14.5px; color: #1b5640; }
+.et-pledges span { font-size: 13px; line-height: 1.5; color: #35604f; }
+.et-section header { margin: 6px 0 12px; }
+.et-section h2 { margin: 0; font-size: 18px; font-weight: 650; letter-spacing: -.2px; }
+.et-section header p { margin: 2px 0 0; font-size: 13px; color: #7a877e; }
+.et-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 16px; align-items: start; }
+.et-card h3 { margin: 0 0 6px; font-size: 15.5px; font-weight: 650; }
+.et-takeaway { margin: 0 0 12px; padding: 8px 12px; font-size: 13.5px; font-weight: 600; line-height: 1.5; color: #1b5640; background: #f1f6f2; border-left: 3px solid #22694f; border-radius: 0 8px 8px 0; }
+.et-card ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; line-height: 1.6; color: #4b5f53; }
+@media (max-width: 900px) { .et-pledges { grid-template-columns: minmax(0, 1fr); } }

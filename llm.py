@@ -36,8 +36,19 @@ contexto_ml apenas orienta investigação; probabilidades e similaridades não s
 Não gere notas, probabilidades próprias, ranking ou anos totais inferidos. Use listas vazias quando necessário.'''
 
 
+def _is_claude() -> bool:
+    return urlsplit(os.getenv('LLM_BASE_URL') or '').hostname == 'api.anthropic.com'
+
+
 def _client():
-    return OpenAI(api_key=os.getenv('LLM_API_KEY'), base_url=os.getenv('LLM_BASE_URL') or None, timeout=45.0, max_retries=0)
+    # Claude (camada compatível com o SDK OpenAI): pensamento ligado por padrão nos modelos 5, então o prazo é maior.
+    headers = {'anthropic-workspace-id': os.environ['ANTHROPIC_WORKSPACE_ID']} if _is_claude() and os.getenv('ANTHROPIC_WORKSPACE_ID') else None
+    return OpenAI(api_key=os.getenv('LLM_API_KEY'), base_url=os.getenv('LLM_BASE_URL') or None, timeout=120.0 if _is_claude() else 45.0, max_retries=0, default_headers=headers)
+
+
+def sampling_options() -> dict:
+    # Modelos Claude recentes recusam temperature < 1 (HTTP 400): omitir o parâmetro.
+    return {} if _is_claude() else {'temperature': 0.2}
 
 
 def provider_schema(model=GroundedLLMResponse) -> dict:
@@ -62,6 +73,9 @@ def provider_schema(model=GroundedLLMResponse) -> dict:
 
 def completion_options(model: str, schema: dict) -> dict:
     endpoint = urlsplit(os.getenv('LLM_BASE_URL') or 'https://api.openai.com/v1')
+    if endpoint.hostname == 'api.anthropic.com':
+        # json_object não é aceito; o contrato JSON vem do prompt e é validado no servidor. Folga para o raciocínio interno.
+        return {'max_tokens': 8000}
     if endpoint.hostname == 'api.groq.com' and endpoint.path.rstrip('/') == '/openai/v1':
         if model in {'openai/gpt-oss-120b', 'openai/gpt-oss-20b'}:
             return {'response_format': {'type': 'json_schema', 'json_schema': {'name': 'talentmatch_references', 'strict': True, 'schema': schema}}, 'reasoning_effort': 'low', 'max_completion_tokens': 3500}
@@ -75,6 +89,8 @@ def parse_response(content: str | None, model=GroundedLLMResponse):
     text = content.strip()
     if text.startswith('```'):
         text = re.sub(r'^```(?:json)?\s*|\s*```$', '', text)
+    if not text.startswith('{') and '{' in text and '}' in text:
+        text = text[text.index('{'):text.rindex('}') + 1]
     try:
         data = json.loads(text)
         if model is GroundedLLMResponse and isinstance(data, dict):
@@ -115,7 +131,7 @@ def analisar(curriculo: str, vaga: str, ml_context: dict | None = None) -> dict:
     if included:
         payload['contexto_ml'] = ml_context
     try:
-        response = _client().chat.completions.create(model=os.environ['LLM_MODEL'], temperature=0.2, **completion_options(os.environ['LLM_MODEL'], schema), messages=[{'role': 'system', 'content': SYSTEM}, {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False)}])
+        response = _client().chat.completions.create(model=os.environ['LLM_MODEL'], **sampling_options(), **completion_options(os.environ['LLM_MODEL'], schema), messages=[{'role': 'system', 'content': SYSTEM}, {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False)}])
     except APITimeoutError:
         raise ServiceError('llm_timeout', 'O provedor excedeu o tempo limite. Resultado ML preservado.', 504) from None
     except APIConnectionError:
