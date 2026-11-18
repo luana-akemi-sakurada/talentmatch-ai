@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import { Activity, ArrowUpRight, ChartNoAxesCombined, FlaskConical, LayoutDashboard, Menu, ScanText, ShieldCheck, Sparkles, Users, X } from 'lucide-react'
+import { Activity, ChartNoAxesCombined, FlaskConical, LayoutDashboard, Menu, ScanText, ShieldCheck, Users, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useResource } from '@/hooks/use-resource'
 import { api } from '@/services/api'
@@ -58,7 +58,6 @@ export default function App() {
       <button className="mobile-close" aria-label="Fechar menu" onClick={closeMenu}><X/></button>
       <p className="nav-label">ANÁLISE CURRÍCULO–VAGA</p>
       <nav aria-label="Navegação principal">{links.map(({to,label,icon: Icon}) => <NavLink key={to} to={to} end={to === '/'} onClick={() => setMenu(false)} className={({isActive}) => `nav-item ${isActive ? 'active' : ''}`}><Icon size={19}/>{label}</NavLink>)}</nav>
-      <div className="sidebar-note"><span className="tiny-spark"><Sparkles size={18}/></span><h3>ML estima.<br/>LLM verifica evidências.</h3><p>Explore sinais de compatibilidade, sem ranking ou rejeição automática. A decisão continua humana.</p><NavLink to="/etica" onClick={() => setMenu(false)}>Conheça os princípios <ArrowUpRight size={15}/></NavLink></div>
       <div className="workspace-footer"><div><strong>Projeto acadêmico</strong><span>PUCPR · TDE2 / v2.0</span></div></div>
     </aside>
     <div className="workspace" inert={menu}>
