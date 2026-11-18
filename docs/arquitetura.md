@@ -1,11 +1,9 @@
 # Objetivo e arquitetura
 
-Atualização de confiabilidade: consulte [confiabilidade.md](confiabilidade.md).
 A saída ao vivo agora usa extração de evidências e composição no servidor, sem
 nota numérica; vetores TF-IDF vazios produzem abstenção. A estrutura geral abaixo
 continua válida; o contrato público foi atualizado em API/OpenAPI.
-Na entrega final, perguntas foram removidas; a saída estruturada e os erros
-diferenciados estão descritos em [estabilizacao-llm.md](estabilizacao-llm.md).
+Na entrega final, perguntas foram removidas e os erros do provedor têm códigos distintos.
 
 O TalentMatch AI apoia a leitura de currículos em relação a vagas. Não é um ATS,
 cadastro de candidatos, mecanismo de rejeição ou decisão de contratação. Faz parte

@@ -1,4 +1,1 @@
 -r backend/requirements.txt
-matplotlib
-seaborn
-streamlit

@@ -128,5 +128,4 @@ vazio também gera abstenção ML, sem categoria/probabilidades.
 
 **Visual sugerido:** fluxo final + uma pergunta para discussão.
 **Tela:** `/resultado`, perfil, evidências e lacunas; sem perguntas geradas.
-**Nota de fala:** os estudos futuros não foram executados. Reportar testes conforme
-[validacao.md](validacao.md), sem generalizar mocks para qualidade do LLM real.
+**Nota de fala:** os estudos futuros não foram executados. Não generalizar testes com mocks para a qualidade do LLM real.

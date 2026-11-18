@@ -33,8 +33,8 @@ existir regra de pontuação validada, mesmo quando as evidências textuais fore
 Null não significa zero. A resposta demo mantém seu indicador ilustrativo numérico.
 `llm.ml_context_included` informa se o contexto ML foi enviado ao provedor.
 
-O frontend e Streamlit incluídos tratam esses estados. Outros clientes precisam
-aceitar nota nula e lista ML vazia. Ver [regras e limitações](confiabilidade.md).
+O frontend incluído trata esses estados. Outros clientes precisam
+aceitar nota nula e lista ML vazia.
 
 ## Limites e erros
 
@@ -73,9 +73,7 @@ pode estar em abstenção por vetor vazio. Nenhum score é criado na falha.
 
 O campo adicional `llm_diagnostic` é null quando não há diagnóstico local ou
 contém somente `rule`, `field`, `source`, `category` e, para listas, `index`
-(base zero). Não contém valores extraídos nem respostas do provedor. Consulte
-[diagnostico-evidencias.md](diagnostico-evidencias.md) para regras, exemplo
-fictício e limites da correspondência literal. Clientes existentes podem ignorá-lo.
+(base zero). Não contém valores extraídos nem respostas do provedor. Clientes existentes podem ignorá-lo.
 
 Na comparação, `results` e `failures` mantêm os identificadores da ordem de envio;
 alguns ou todos os documentos podem falhar. O frontend exibe essas falhas.
@@ -86,8 +84,7 @@ Contrato final simplificado: `mode` assume `live`; `demo` precisa ser explícito
 `llm.perfil_profissional` pode ser null ou conter designação/citação verificável.
 Campos de perguntas e status de entrevista foram removidos da resposta pública.
 Erros de autenticação, permissão, modelo, limites/quota, timeout e conexão agora
-possuem códigos distintos. Veja a tabela e o contrato do provedor em
-[estabilizacao-llm.md](estabilizacao-llm.md).
+possuem códigos distintos. Veja os códigos em `backend/app/core/errors.py`.
 
 Da raiz, em Python:
 

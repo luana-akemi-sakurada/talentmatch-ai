@@ -24,7 +24,7 @@ data/
 ## Treinamento
 
 ```powershell
-python train.py
+python train.py --data-dir data
 ```
 
 O script salva automaticamente em `models/`:
@@ -34,14 +34,28 @@ models/
 ├── classificador_area.joblib
 ├── ml_metadata_area.joblib
 ├── classificador_compatibilidade.joblib
-└── ml_metadata_compatibilidade.joblib
+├── ml_metadata_compatibilidade.joblib
+└── evaluation.json
 ```
 
 ## Execução
 
+1. Copie `.env.example` para `.env` e preencha `LLM_API_KEY` (o exemplo usa o Groq, que é gratuito).
+2. Back-end (na raiz do projeto, com o ambiente virtual ativado):
+
 ```powershell
-streamlit run app.py
+python -m uvicorn backend.app.main:app --reload --port 8000
 ```
+
+3. Front-end (em outro terminal):
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+4. Abra http://localhost:5173. Para testar a conexão com o LLM: `python scripts/testar_llm.py`.
 
 ## Ética
 
