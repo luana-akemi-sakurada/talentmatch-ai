@@ -1,32 +1,24 @@
-import csv
+import json
 from backend.app.core.config import MODEL_DIR
 from backend.app.core.errors import ServiceError
-from backend.app.services.classifier import load_model
+from backend.app.services.classifier import _load_artifacts, load_model
 
 
 def metrics() -> dict:
     try:
-        with (MODEL_DIR / 'comparacao_modelos.csv').open(encoding='utf-8-sig') as file:
-            rows = [{'name': row['modelo'], 'accuracy': float(row['acuracia']),
-                     'f1_macro': float(row['f1_macro']), 'precision_macro': None,
-                     'recall_macro': None} for row in csv.DictReader(file)]
-        best = max(rows, key=lambda row: row['f1_macro'])
-    except (OSError, ValueError, KeyError):
-        raise ServiceError('metrics_unavailable', 'Não foi possível ler as métricas originais.', 503) from None
-    return {'models': rows, 'selected_model': best['name'],
-            'selection_criterion': 'F1 macro no conjunto de teste original',
-            'source': 'models/comparacao_modelos.csv',
-            'dataset': {'name': 'Resume Dataset — Kaggle / snehaanbhawal',
-                        'train_fraction': 0.8, 'test_fraction': 0.2, 'random_state': 42,
-                        'stratified': True, 'train_count': None, 'test_count': None,
-                        'available_locally': (MODEL_DIR.parent / 'data/Resume.csv').exists()},
-            'limitations': ['Precision e recall não foram salvos nos artefatos originais.',
-                           'Contagens de treino, teste e categorias não estão registradas.',
-                           'Seleção e avaliação no mesmo teste: desempenho sem conjunto independente final.',
-                           'Métricas classificam área profissional; não validam aderência à vaga.']}
+        report = json.loads((MODEL_DIR / 'evaluation.json').read_text(encoding='utf-8'))
+        if report['schema_version'] != 2 or set(report['tasks']) != {'area', 'compatibility'}:
+            raise ValueError('schema')
+        _, area, _, match = _load_artifacts()
+        if not report.get('run_id') or report['run_id'] != area.get('run_id') or report['run_id'] != match.get('run_id'):
+            raise ValueError('run_mismatch')
+        for task in report['tasks'].values():
+            task['evaluation']['metrics']['accuracy']['point']
+            task['evaluation']['metrics']['f1_macro']['point']
+        return report
+    except (OSError, ValueError, KeyError, TypeError, ServiceError):
+        raise ServiceError('evaluation_unavailable', 'Avaliação atual indisponível ou incompatível com os modelos. Execute o novo train.py e reinicie o backend. Métricas antigas não serão utilizadas.', 503) from None
 
 
 def categories() -> dict:
-    return {'categories': [str(c) for c in load_model().classes_], 'counts': None,
-            'distribution_available': False,
-            'notice': 'Classes recuperadas do modelo. Frequências indisponíveis; não inferidas das probabilidades.'}
+    return {'categories': [str(c) for c in load_model().classes_], 'counts': None, 'distribution_available': False, 'notice': 'Áreas derivadas das vagas associadas no dataset, não rótulos profissionais anotados diretamente nos currículos.'}
