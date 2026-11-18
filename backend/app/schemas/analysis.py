@@ -29,7 +29,6 @@ class GroundedLLMResponse(StrictModel):
     evidencia_anos_experiencia: str | None = Field(max_length=1000)
     requisitos_atendidos: list[Evidence] = Field(max_length=30)
     requisitos_sem_evidencia: list[str] = Field(max_length=30)
-    # Accepted for detecting unsupported numerical conclusions, never published.
     nota_aderencia: int | None = Field(default=None, ge=0, le=100, strict=True)
     perfil_profissional: ProfessionalProfile | None = None
 
@@ -100,6 +99,7 @@ class AnalysisResponse(StrictModel):
     candidate_id: str
     mode: Literal['live', 'demo']
     ml: MLResult
+    ml_context: dict | None = None
     llm: LLMAnalysis | None
     warnings: list[str]
     llm_error: str | None = None

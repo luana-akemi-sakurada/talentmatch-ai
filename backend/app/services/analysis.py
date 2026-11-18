@@ -5,10 +5,10 @@ from llm import analisar
 from backend.app.core.config import MAX_JOB_CHARS, MAX_LLM_CHARS
 from backend.app.core.errors import ServiceError
 from backend.app.schemas.analysis import AnalysisResponse, Evidence, LLMAnalysis
-from backend.app.services.classifier import predict
+from backend.app.services.classifier import build_ml_context, predict
 from backend.app.services.files import validate_text
 from backend.app.services.privacy import minimize
-from backend.app.services.requirement_coverage import evaluate
+from backend.app.services.requirement_coverage import evaluate, inventory
 
 logger = logging.getLogger('talentmatch.analysis')
 
@@ -47,6 +47,9 @@ def analyze(resume: str, job: str, mode: Literal['live', 'demo'], candidate_id: 
     safe_resume, resume_count = minimize(resume, resume=True)
     safe_job, job_count = minimize(job)
     ml = predict(safe_resume)
+    catalog = inventory(safe_job)
+    requisitos = [item.texto for item in catalog.requisitos]
+    contexto_ml = build_ml_context(safe_resume, requisitos, safe_job)
     warnings = [*ml.warnings, 'Indicador heurístico, sem valor de probabilidade ou decisão de contratação.',
                 'A minimização automática pode deixar dados pessoais no texto livre; revise o documento antes de enviar.',
                 'Modelo treinado em inglês; desempenho em português não validado.']
@@ -60,9 +63,11 @@ def analyze(resume: str, job: str, mode: Literal['live', 'demo'], candidate_id: 
         warnings.insert(0, 'RESPOSTA SIMULADA. Apenas a classificação ML utiliza o modelo treinado real.')
     else:
         try:
-            result = LLMAnalysis.model_validate(analisar(safe_resume, safe_job,
-                ml.predicted_area if ml.status == 'predicted' else None,
-                ml.top_categories[0].probability if ml.top_categories else None))
+            result = LLMAnalysis.model_validate(analisar(
+                safe_resume,
+                safe_job,
+                contexto_ml if contexto_ml.get('disponivel') else None,
+            ))
             if result.abstention_reason:
                 warnings.append('Abstenção de pontuação: evidências textuais são exibidas quando verificáveis, '
                                 'mas nenhuma nota LLM é publicada sem método de pontuação validado. Não significa aderência zero.')
@@ -71,7 +76,7 @@ def analyze(resume: str, job: str, mode: Literal['live', 'demo'], candidate_id: 
             error = exc.code
             diagnostic = exc.diagnostic
             warnings.append(exc.message)
-    return AnalysisResponse(candidate_id=candidate_id, mode=mode, ml=ml, llm=result,
+    return AnalysisResponse(candidate_id=candidate_id, mode=mode, ml=ml, ml_context=contexto_ml, llm=result,
                             cobertura_requisitos=evaluate(safe_job, safe_resume[:MAX_LLM_CHARS], result,
                                 eligible=mode == 'live' and len(safe_resume) <= MAX_LLM_CHARS),
                             llm_error=error, llm_diagnostic=diagnostic, warnings=warnings,
