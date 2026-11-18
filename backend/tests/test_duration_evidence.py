@@ -60,7 +60,7 @@ def test_unverified_or_contradictory_duration_is_null_and_preserves_other_verifi
     assert value.nota_aderencia is None
     assert 'Duração de experiência não estabelecida' in value.justificativa
     # Unverified scalar years must not be turned into a generated assertion.
-    assert value.resumo == 'Menções verificadas no currículo: Java.\nExperiência citada: ' + EXPERIENCE
+    assert value.resumo == 'Extração verificada: 1 habilidade(s) com menção literal; 1 trecho(s) de experiência citados; 1 requisito(s) da vaga com evidência.'
 
 
 def test_ambiguous_excerpt_is_not_resolved_by_picking_a_convenient_passage():

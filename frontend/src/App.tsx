@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import { Activity, ChartNoAxesCombined, FlaskConical, LayoutDashboard, Menu, ScanText, ShieldCheck, Users, X } from 'lucide-react'
+import { Activity, ChartNoAxesCombined, FlaskConical, Menu, ScanText, ShieldCheck, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useResource } from '@/hooks/use-resource'
 import { api } from '@/services/api'
@@ -8,14 +8,11 @@ import Dashboard from '@/pages/Dashboard'
 import Analyze from '@/pages/Analyze'
 import Results from '@/pages/Results'
 import Experiments from '@/pages/Experiments'
-import Compare from '@/pages/Compare'
 import Ethics from '@/pages/Ethics'
 import type { Analysis } from '@/types'
 
 const links = [
-  { to: '/', label: 'Visão geral', icon: LayoutDashboard },
   { to: '/analise', label: 'Analisar currículo e vaga', icon: ScanText },
-  { to: '/comparacao', label: 'Análise em lote', icon: Users },
   { to: '/experimentos', label: 'Modelos e validação', icon: FlaskConical },
   { to: '/etica', label: 'Ética e transparência', icon: ShieldCheck },
 ]
@@ -69,10 +66,8 @@ export default function App() {
           <Route path="/" element={<Dashboard hasResult={!!result}/>}/>
           <Route path="/analise" element={<Analyze onResult={setResult}/>}/>
           <Route path="/demonstracao" element={<Analyze key="offline" onResult={setResult} offline/>}/>
-          <Route path="/demonstracao/comparacao" element={<Compare key="offline" offline/>}/>
           <Route path="/resultado" element={<Results result={result} onClear={() => setResult(null)}/>}/>
           <Route path="/experimentos" element={<Experiments/>}/>
-          <Route path="/comparacao" element={<Compare/>}/>
           <Route path="/etica" element={<Ethics/>}/>
           <Route path="*" element={<div className="error-state"><h1>Página não encontrada</h1><Button asChild><NavLink to="/">Voltar ao início</NavLink></Button></div>}/>
         </Routes>

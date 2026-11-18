@@ -106,9 +106,3 @@ class AnalysisResponse(StrictModel):
     llm_diagnostic: dict[str, str | int] | None = None
     cobertura_requisitos: RequirementCoverage | None = None
     privacy: dict[str, int | bool]
-
-
-class ComparisonResponse(StrictModel):
-    results: list[AnalysisResponse]
-    failures: list[dict[str, str]]
-    notice: str = 'Ordem de envio preservada. Não há ranking nem rejeição automática.'

@@ -1,4 +1,4 @@
-import type { Analysis, Categories, Comparison, Metrics } from '@/types'
+import type { Analysis, Categories, Metrics } from '@/types'
 
 export const API = (import.meta.env.VITE_API_URL || '').trim().replace(/\/+$/, '').replace(/\/api$/, '')
 export interface HealthStatus { status: string; model_loaded: boolean; model_type?: string }
@@ -27,5 +27,4 @@ export const api = {
     return data
   },
   analyze: (body: FormData, signal: AbortSignal) => request<Analysis>('/analyze', { method: 'POST', body, signal }),
-  compare: (body: FormData, signal: AbortSignal) => request<Comparison>('/compare', { method: 'POST', body, signal }),
 }

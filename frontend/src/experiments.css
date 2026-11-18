@@ -1,0 +1,39 @@
+/* Página Modelos e validação: prefixo .ev-* (reaproveita .rs-* de results.css). */
+.ev-meta { margin: 0; font-size: 12px; color: #7a877e; }
+.ev-section .rs-title { font-size: 18px; margin-bottom: 6px; }
+.ev-section.is-primary { border-color: #b9d0c2; }
+.ev-lead { margin: 0 0 18px; font-size: 14.5px; line-height: 1.6; color: #35483d; max-width: 70ch; }
+.ev-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.ev-kpi { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; background: #f7f9f5; border: 1px solid #e6ece2; border-radius: 12px; }
+.ev-kpi-title { font-size: 11.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: #6b7c70; }
+.ev-kpi strong { font-size: 26px; font-weight: 700; letter-spacing: -.5px; line-height: 1.2; color: #22694f; }
+.ev-kpi-range { font-size: 12px; color: #4b5f53; }
+.ev-kpi-hint { margin-top: 4px; font-size: 11.5px; line-height: 1.45; color: #7a877e; }
+.ev-baselines li { grid-template-columns: minmax(150px, 260px) minmax(0, 1fr) 48px 70px; }
+.ev-f1 { font-size: 12px; color: #7a877e; text-align: right; font-variant-numeric: tabular-nums; }
+.ev-importance li { grid-template-columns: minmax(130px, 220px) minmax(0, 1fr); }
+.ev-two { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; margin-top: 4px; }
+.ev-table-wrap { overflow-x: auto; }
+.ev-table, .ev-matrix { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.ev-table caption { text-align: left; font-size: 12px; color: #7a877e; padding-bottom: 6px; }
+.ev-table th, .ev-table td { padding: 8px 10px; border-bottom: 1px solid #eef1ea; text-align: right; }
+.ev-table th:first-child, .ev-table td:first-child { text-align: left; }
+.ev-table thead th { font-size: 11.5px; font-weight: 600; color: #6b7c70; }
+.ev-table tbody th { font-weight: 600; }
+.ev-matrix th, .ev-matrix td { padding: 10px 12px; text-align: center; border: 2px solid #fff; }
+.ev-matrix thead th { font-size: 12px; font-weight: 600; color: #4b5f53; background: #f1f4ee; }
+.ev-matrix tbody th { text-align: left; font-size: 12.5px; font-weight: 600; background: #f1f4ee; white-space: nowrap; }
+.ev-matrix tbody th small { display: block; font-weight: 400; color: #7a877e; }
+.ev-matrix td { border-radius: 6px; min-width: 70px; }
+.ev-matrix td strong { display: block; font-size: 15px; }
+.ev-matrix td small { font-size: 11px; opacity: .8; }
+.ev-matrix td.is-diagonal { outline: 2px solid #22694f; outline-offset: -2px; }
+.ev-corner { font-size: 11px; color: #7a877e; text-align: left; background: transparent; }
+.ev-details { margin-top: 18px; padding-top: 14px; border-top: 1px solid #eef1ea; font-size: 13px; color: #4b5f53; }
+.ev-details summary { cursor: pointer; font-weight: 600; color: #24362e; margin-bottom: 10px; }
+.ev-details p { margin: 10px 0 0; line-height: 1.6; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 900px) { .ev-two { grid-template-columns: minmax(0, 1fr); } .ev-baselines li { grid-template-columns: minmax(90px, 140px) minmax(0, 1fr) 44px; } .ev-baselines .ev-f1 { display: none; } }
+
+.ev-table tbody th { background: transparent; font-size: 13px; text-align: left; }
+.ev-table tbody td { font-size: 13px; background: transparent; }

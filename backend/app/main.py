@@ -6,9 +6,9 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from starlette.concurrency import run_in_threadpool
-from backend.app.core.config import MODEL_DIR, MAX_FILE_BYTES, MAX_CANDIDATES, allowed_origins
+from backend.app.core.config import MODEL_DIR, MAX_FILE_BYTES, allowed_origins
 from backend.app.core.errors import ServiceError
-from backend.app.schemas.analysis import AnalysisResponse, ComparisonResponse
+from backend.app.schemas.analysis import AnalysisResponse
 from backend.app.services.analysis import analyze
 from backend.app.services.classifier import load_model
 from backend.app.services.experiments import metrics, categories
@@ -29,13 +29,13 @@ app.add_middleware(CORSMiddleware, allow_origins=allowed_origins(), allow_method
 
 @app.middleware('http')
 async def privacy_headers(request: Request, call_next):
-    limit = MAX_FILE_BYTES * MAX_CANDIDATES + 100000
+    limit = MAX_FILE_BYTES + 100000
     chunks = []
     length = 0
     async for chunk in request.stream():
         length += len(chunk)
         if length > limit:
-            return JSONResponse(status_code=413, content={'error': {'code': 'request_too_large', 'message': 'Envio excede 25 MB mais metadados.'}}, headers={'Cache-Control': 'no-store'})
+            return JSONResponse(status_code=413, content={'error': {'code': 'request_too_large', 'message': 'Envio excede 5 MB mais metadados.'}}, headers={'Cache-Control': 'no-store'})
         chunks.append(chunk)
     request._body = b''.join(chunks)
     response = await call_next(request)
@@ -84,26 +84,6 @@ async def analyze_resume(job_description: Annotated[str, Form(min_length=1, max_
         raise ServiceError('ambiguous_resume', 'Envie um arquivo ou cole texto, apenas uma das opções.')
     text = await read_resume(file) if file else resume_text
     return await run_in_threadpool(analyze, text, job_description, mode, 'Candidato 1')
-
-@app.post('/api/compare', response_model=ComparisonResponse, responses=ERROR_RESPONSES)
-async def compare(job_description: Annotated[str, Form(min_length=1, max_length=16000)], files: Annotated[list[UploadFile], File()], mode: Annotated[Literal['live', 'demo'], Form()] = 'live'):
-    if not 2 <= len(files) <= MAX_CANDIDATES:
-        for file in files:
-            await file.close()
-        raise ServiceError('invalid_batch', 'Envie entre 2 e 5 currículos.')
-    results, failures = [], []
-    try:
-        for index, file in enumerate(files, 1):
-            identifier = f'Candidato {index}'
-            try:
-                text = await read_resume(file)
-                results.append(await run_in_threadpool(analyze, text, job_description, mode, identifier))
-            except ServiceError as exc:
-                failures.append({'candidate_id': identifier, 'code': exc.code, 'message': exc.message})
-    finally:
-        for file in files:
-            await file.close()
-    return ComparisonResponse(results=results, failures=failures)
 
 @app.get('/api/models/metrics')
 def model_metrics():

@@ -2,13 +2,17 @@ import { API } from '@/services/api'
 export interface Interval { point: number; low: number; high: number }
 export interface TaskEvaluation {
   model: string; classes: string[];
-  splits: Record<string, {rows: number; resume_groups: number; candidates: number; class_counts: Record<string, number>}>;
+  splits: Record<string, {rows: number; resume_groups: number; candidates: number; jobs?: number; class_counts: Record<string, number>}>;
   evaluation: {
     metrics: {accuracy: Interval; f1_macro: Interval};
     bootstrap: {method: string; iterations: number; confidence: number; scope: string};
     probability_quality: Record<string, {log_loss: number; multiclass_brier: number}>;
     classification_report: Record<string, number | {precision: number; recall: number; 'f1-score': number; support: number}>;
     confusion_matrix: {labels: string[]; counts: number[][]};
+    regression?: {r2: Interval; mae: Interval; score_std_teste: number};
+    baselines?: Record<string, {accuracy: number; f1_macro: number; descricao?: string}>;
+    interval_80_coverage_test?: number;
+    feature_importance?: {feature: string; label: string; importance: number; std: number}[];
   };
 }
 export interface Evaluation {

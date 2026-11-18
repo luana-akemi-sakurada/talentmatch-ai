@@ -140,9 +140,12 @@ def ground(draft: GroundedLLMResponse, resume: str, job: str, context_included: 
     supported = bool(skills or experience or requirements or profile)
     summary = 'Abstenção: não há evidências verificáveis suficientes para descrever competências ou experiência.'
     if supported:
-        summary = 'Menções verificadas no currículo: ' + (', '.join(skills) if skills else 'consulte as citações abaixo') + '.'
-        if experience:
-            summary += '\nExperiência citada: ' + ' '.join(experience)
+        # Resumo curto: habilidades e trechos já aparecem, separados, na interface.
+        counts = [text for text in (
+            f'{len(skills)} habilidade(s) com menção literal' if skills else '',
+            f'{len(experience)} trecho(s) de experiência citados' if experience else '',
+            f'{len(requirements)} requisito(s) da vaga com evidência' if requirements else '') if text]
+        summary = 'Extração verificada: ' + '; '.join(counts) + '.' if counts else 'Extração verificada: consulte as citações abaixo.'
     justification = (f'{len(requirements)} associações requisito-evidência com correspondência literal e {len(missing)} requisitos sem evidência informada. '
         'Associações confirmam apenas os termos verificados, não os demais qualificadores de frases compostas. '
         'A lista pode não cobrir todos os requisitos da vaga. Não há regra validada de completude e ponderação para nota de aderência. '

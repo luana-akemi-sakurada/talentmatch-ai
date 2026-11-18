@@ -16,6 +16,19 @@ export interface CompatibilityPrediction {
   margem_top1_top2: number;
   entropia_normalizada: number;
   alternativas: { compatibilidade: string; probabilidade_calibrada: number }[];
+  score_estimado?: number;
+  intervalo_80?: [number, number];
+  cortes_faixas?: [number, number];
+  faixas?: { faixa: string; probabilidade: number }[];
+  sinais?: { sinal: string; contribuicao: number }[];
+  habilidades_em_comum?: string[];
+  habilidades_da_vaga_ausentes?: string[];
+  n_habilidades_vaga?: number;
+  similaridade_textual?: number | null;
+  anos_curriculo?: number | null;
+  anos_vaga?: number | null;
+  formacao_curriculo?: string;
+  formacao_vaga?: string;
 }
 export interface OODDetection {
   possivel_ood: boolean;
@@ -48,4 +61,3 @@ export interface Analysis {
   llm: { resumo: string; habilidades: string[]; anos_experiencia: number | null; experiencia_profissional: string[]; nota_aderencia: number | null; requisitos_atendidos: Evidence[]; requisitos_sem_evidencia: string[]; pontos_fortes: string[]; lacunas: string[]; justificativa: string; abstention_reason?:string|null; ml_context_included?:boolean|null; perfil_profissional?: ProfessionalProfile|null } | null;
   warnings: string[]; llm_error: string | null; privacy: Record<string, number | boolean>;
 }
-export interface Comparison { results: Analysis[]; failures: {candidate_id: string; code: string; message: string}[]; notice: string }

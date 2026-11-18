@@ -8,7 +8,6 @@ de provedor no frontend. CORS restrito a origens configuradas; Vite usa proxy `/
 |---|---|
 | GET /api/health | 200 com estado do classificador; 503 se indisponível |
 | POST /api/analyze | multipart: job_description, mode, file OU resume_text |
-| POST /api/compare | multipart: job_description, mode, files repetido 2–5 vezes |
 | GET /api/models/metrics | Métricas lidas do CSV, seleção, metodologia e limitações |
 | GET /api/models/categories | Classes do modelo; counts=null, distribuição ausente |
 | GET /api/models/confusion-matrix | Imagem PNG original |

@@ -121,5 +121,4 @@ def resolve_references(draft: ReferenceResponse, resume: str, job: str, resume_u
     result.justificativa = (result.justificativa + note)[:4000]
     if rejected or omitted_units:
         result.abstention_reason = 'partial_extraction'
-        result.resumo = ('Extração parcial; itens inválidos não foram publicados. ' + result.resumo)[:3000]
     return result

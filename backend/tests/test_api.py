@@ -34,17 +34,6 @@ def test_live_unconfigured_preserves_ml(client, caplog):
     assert 'private-name' not in caplog.text
 
 
-def test_batch_order_and_partial_failure(client):
-    response = client.post('/api/compare', data={'job_description': 'Python SQL', 'mode': 'demo'},
-                           files=[('files', ('a.txt', b'Python SQL', 'text/plain')),
-                                  ('files', ('b.txt', b'AWS Java', 'text/plain')),
-                                  ('files', ('c.pdf', b'bad', 'application/pdf'))])
-    assert response.status_code == 200
-    data = response.json()
-    assert [r['candidate_id'] for r in data['results']] == ['Candidato 1', 'Candidato 2']
-    assert data['failures'][0]['candidate_id'] == 'Candidato 3'
-
-
 def test_validation_does_not_echo_private_input(client):
     response = client.post('/api/analyze', data={'resume_text': 'private-data', 'job_description': 'Python', 'mode': 'secret-key'})
     assert response.status_code == 422 and 'secret-key' not in response.text
@@ -55,7 +44,6 @@ def test_validation_does_not_echo_private_input(client):
 def test_file_errors_and_ambiguous_input(client):
     assert client.post('/api/analyze', data={'job_description': 'Python'}, files={'file': ('a.exe', b'xx', 'application/octet-stream')}).status_code == 415
     assert client.post('/api/analyze', data={'job_description': 'Python', 'resume_text': 'SQL'}, files={'file': ('a.txt', b'Python', 'text/plain')}).status_code == 422
-    assert client.post('/api/compare', data={'job_description': 'Python'}, files=[('files', ('a.txt', b'Python', 'text/plain'))]).status_code == 422
 
 
 def test_model_failure(client, monkeypatch):
@@ -68,5 +56,5 @@ def test_model_failure(client, monkeypatch):
 
 def test_openapi_contract(client):
     schema = client.get('/openapi.json').json()
-    assert '/api/compare' in schema['paths']
+    assert '/api/compare' not in schema['paths']
     assert 'multipart/form-data' in schema['paths']['/api/analyze']['post']['requestBody']['content']

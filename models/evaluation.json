@@ -1,0 +1,489 @@
+{
+  "schema_version": 2,
+  "run_id": "20261118T173127045005Z",
+  "dataset": "Shresth786/job-resume-matching",
+  "sklearn_version": "1.9.1",
+  "seed": 42,
+  "split_strategy": "Area: hashes de curriculos limpos disjuntos (60/15/10/15). Matching: curriculos E vagas disjuntos entre treino/calibracao/validacao/teste; so pares dentro do mesmo conjunto.",
+  "label_provenance": "not_verified",
+  "area_candidates_excluded_ambiguous": 1463,
+  "tasks": {
+    "area": {
+      "classes": [
+        "BUSINESS-DEVELOPMENT",
+        "FINANCE",
+        "HR",
+        "INFORMATION-TECHNOLOGY",
+        "SALES"
+      ],
+      "model": "TF-IDF + LogisticRegression + sigmoid holdout",
+      "splits": {
+        "train": {
+          "rows": 4839,
+          "resume_groups": 4839,
+          "candidates": 4839,
+          "class_counts": {
+            "INFORMATION-TECHNOLOGY": 4005,
+            "FINANCE": 566,
+            "SALES": 113,
+            "BUSINESS-DEVELOPMENT": 93,
+            "HR": 62
+          }
+        },
+        "calibration": {
+          "rows": 1200,
+          "resume_groups": 1200,
+          "candidates": 1200,
+          "class_counts": {
+            "INFORMATION-TECHNOLOGY": 972,
+            "FINANCE": 171,
+            "SALES": 25,
+            "BUSINESS-DEVELOPMENT": 20,
+            "HR": 12
+          }
+        },
+        "validation": {
+          "rows": 812,
+          "resume_groups": 812,
+          "candidates": 812,
+          "class_counts": {
+            "INFORMATION-TECHNOLOGY": 671,
+            "FINANCE": 92,
+            "BUSINESS-DEVELOPMENT": 19,
+            "SALES": 19,
+            "HR": 11
+          }
+        },
+        "test": {
+          "rows": 1218,
+          "resume_groups": 1218,
+          "candidates": 1218,
+          "class_counts": {
+            "INFORMATION-TECHNOLOGY": 1004,
+            "FINANCE": 146,
+            "SALES": 30,
+            "HR": 20,
+            "BUSINESS-DEVELOPMENT": 18
+          }
+        }
+      },
+      "evaluation": {
+        "metrics": {
+          "accuracy": {
+            "point": 0.9556650246305419,
+            "low": 0.9453817733990147,
+            "high": 0.9671592775041051
+          },
+          "f1_macro": {
+            "point": 0.8404658140803614,
+            "low": 0.7802025189116867,
+            "high": 0.8876071159324948
+          }
+        },
+        "bootstrap": {
+          "method": "percentile_cluster_resume",
+          "iterations": 300,
+          "confidence": 0.95,
+          "scope": "Modelo fixo; nao inclui variacao do retreino."
+        },
+        "probability_quality": {
+          "uncalibrated": {
+            "log_loss": 0.15244212808422364,
+            "multiclass_brier": 0.07179277656093236
+          },
+          "calibrated": {
+            "log_loss": 0.12373629729620725,
+            "multiclass_brier": 0.06265523429595905
+          }
+        },
+        "classification_report": {
+          "BUSINESS-DEVELOPMENT": {
+            "precision": 0.8888888888888888,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.8888888888888888,
+            "support": 18.0
+          },
+          "FINANCE": {
+            "precision": 0.9154929577464789,
+            "recall": 0.8904109589041096,
+            "f1-score": 0.9027777777777778,
+            "support": 146.0
+          },
+          "HR": {
+            "precision": 0.6842105263157895,
+            "recall": 0.65,
+            "f1-score": 0.6666666666666666,
+            "support": 20.0
+          },
+          "INFORMATION-TECHNOLOGY": {
+            "precision": 0.9685349065880039,
+            "recall": 0.9810756972111554,
+            "f1-score": 0.974764967837704,
+            "support": 1004.0
+          },
+          "SALES": {
+            "precision": 0.9090909090909091,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.7692307692307693,
+            "support": 30.0
+          },
+          "accuracy": 0.9556650246305419,
+          "macro avg": {
+            "precision": 0.873243637726014,
+            "recall": 0.8154084423341642,
+            "f1-score": 0.8404658140803614,
+            "support": 1218.0
+          },
+          "weighted avg": {
+            "precision": 0.9548669588213341,
+            "recall": 0.9556650246305419,
+            "f1-score": 0.9547453527708266,
+            "support": 1218.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "BUSINESS-DEVELOPMENT",
+            "FINANCE",
+            "HR",
+            "INFORMATION-TECHNOLOGY",
+            "SALES"
+          ],
+          "counts": [
+            [
+              16,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              130,
+              0,
+              15,
+              0
+            ],
+            [
+              0,
+              0,
+              13,
+              6,
+              1
+            ],
+            [
+              1,
+              11,
+              6,
+              985,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              10,
+              20
+            ]
+          ]
+        }
+      }
+    },
+    "compatibility": {
+      "classes": [
+        "compatibilidade_fraca",
+        "compatibilidade_media",
+        "compatibilidade_forte"
+      ],
+      "model": "Features de relacao currículo-vaga + HistGradientBoostingRegressor (score) + residuos empiricos (faixas)",
+      "splits": {
+        "train": {
+          "rows": 44543,
+          "resume_groups": 5682,
+          "candidates": 5682,
+          "jobs": 697,
+          "class_counts": {
+            "compatibilidade_fraca": 19410,
+            "compatibilidade_media": 24909,
+            "compatibilidade_forte": 224
+          }
+        },
+        "calibration": {
+          "rows": 3112,
+          "resume_groups": 1156,
+          "candidates": 1156,
+          "jobs": 159,
+          "class_counts": {
+            "compatibilidade_fraca": 1093,
+            "compatibilidade_media": 1974,
+            "compatibilidade_forte": 45
+          }
+        },
+        "validation": {
+          "rows": 1592,
+          "resume_groups": 749,
+          "candidates": 749,
+          "jobs": 115,
+          "class_counts": {
+            "compatibilidade_fraca": 709,
+            "compatibilidade_media": 877,
+            "compatibilidade_forte": 6
+          }
+        },
+        "test": {
+          "rows": 1842,
+          "resume_groups": 948,
+          "candidates": 948,
+          "jobs": 124,
+          "class_counts": {
+            "compatibilidade_fraca": 654,
+            "compatibilidade_media": 1180,
+            "compatibilidade_forte": 8
+          }
+        }
+      },
+      "evaluation": {
+        "metrics": {
+          "accuracy": {
+            "point": 0.7106406080347448,
+            "low": 0.637150932631198,
+            "high": 0.7661476259332974
+          },
+          "f1_macro": {
+            "point": 0.46621000110991523,
+            "low": 0.4190572662344209,
+            "high": 0.5049074041392658
+          }
+        },
+        "regression": {
+          "r2": {
+            "point": 0.22129488550967757,
+            "low": 0.04925266583206636,
+            "high": 0.349964724408942
+          },
+          "mae": {
+            "point": 0.026832883735535367,
+            "low": 0.022833999355991882,
+            "high": 0.03108466538594364
+          },
+          "score_std_teste": 0.03817513169390897
+        },
+        "bootstrap": {
+          "method": "percentile_cluster_job",
+          "iterations": 300,
+          "confidence": 0.95,
+          "scope": "Modelo fixo; curriculos e vagas de teste inéditos; reamostragem por vaga; nao inclui variacao do retreino."
+        },
+        "probability_quality": {
+          "calibrated": {
+            "log_loss": 0.5609097587139024,
+            "multiclass_brier": 0.3656154863800944
+          }
+        },
+        "classification_report": {
+          "compatibilidade_fraca": {
+            "precision": 0.6672727272727272,
+            "recall": 0.5611620795107034,
+            "f1-score": 0.6096345514950167,
+            "support": 654.0
+          },
+          "compatibilidade_media": {
+            "precision": 0.771671826625387,
+            "recall": 0.8449152542372881,
+            "f1-score": 0.8066343042071198,
+            "support": 1180.0
+          },
+          "compatibilidade_forte": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 8.0
+          },
+          "accuracy": 0.740499457111835,
+          "macro avg": {
+            "precision": 0.47964818463270475,
+            "recall": 0.46869244458266385,
+            "f1-score": 0.4720896185673788,
+            "support": 1842.0
+          },
+          "weighted avg": {
+            "precision": 0.7312535934062543,
+            "recall": 0.740499457111835,
+            "f1-score": 0.7331864688610978,
+            "support": 1842.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "compatibilidade_fraca",
+            "compatibilidade_media",
+            "compatibilidade_forte"
+          ],
+          "counts": [
+            [
+              463,
+              191,
+              0
+            ],
+            [
+              334,
+              846,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ]
+          ]
+        },
+        "baselines": {
+          "classe_majoritaria": {
+            "accuracy": 0.6406080347448425,
+            "f1_macro": 0.2603132583278182
+          },
+          "tfidf_concatenado_logistica": {
+            "accuracy": 0.6406080347448425,
+            "f1_macro": 0.42126528675564917,
+            "descricao": "Modelo anterior (curriculo + vaga concatenados), reavaliado com vagas inéditas."
+          }
+        },
+        "interval_80_coverage_test": 0.8040173724212812,
+        "feature_importance": [
+          {
+            "feature": "resume_years",
+            "label": "resume_years",
+            "importance": 0.15471336313474773,
+            "std": 0.01765748958585724
+          },
+          {
+            "feature": "years_gap",
+            "label": "Anos de experiência (currículo − vaga)",
+            "importance": 0.10008383576153898,
+            "std": 0.01728842082586134
+          },
+          {
+            "feature": "area_dot",
+            "label": "Concordância de área",
+            "importance": 0.0854010670591547,
+            "std": 0.00261031885905562
+          },
+          {
+            "feature": "job_area_conf",
+            "label": "job_area_conf",
+            "importance": 0.06799348938503302,
+            "std": 0.007536609192054921
+          },
+          {
+            "feature": "job_years",
+            "label": "job_years",
+            "importance": 0.06620265982581115,
+            "std": 0.0094238113645011
+          },
+          {
+            "feature": "job_edu",
+            "label": "job_edu",
+            "importance": 0.0391500671971871,
+            "std": 0.006347141837628245
+          },
+          {
+            "feature": "n_job_skills",
+            "label": "n_job_skills",
+            "importance": 0.0385341979541042,
+            "std": 0.007349553430828068
+          },
+          {
+            "feature": "n_resume_skills",
+            "label": "n_resume_skills",
+            "importance": 0.028247152489939985,
+            "std": 0.005190054469895153
+          },
+          {
+            "feature": "resume_prob_at_job_area",
+            "label": "resume_prob_at_job_area",
+            "importance": 0.022466057287722618,
+            "std": 0.0019268264958215314
+          },
+          {
+            "feature": "cos_tfidf",
+            "label": "Similaridade lexical (TF-IDF)",
+            "importance": 0.02087769717438768,
+            "std": 0.005014292131779406
+          },
+          {
+            "feature": "skill_recall",
+            "label": "Habilidades da vaga encontradas no currículo",
+            "importance": 0.015923300877107915,
+            "std": 0.002463461202375974
+          },
+          {
+            "feature": "title_overlap",
+            "label": "Termos do cargo no currículo",
+            "importance": 0.008771297048859261,
+            "std": 0.0015891480171791096
+          },
+          {
+            "feature": "edu_gap",
+            "label": "Formação (currículo − vaga)",
+            "importance": 0.0069267315894261825,
+            "std": 0.001666068580107994
+          },
+          {
+            "feature": "resume_area_conf",
+            "label": "resume_area_conf",
+            "importance": 0.0068084914311788095,
+            "std": 0.0037377302073943464
+          },
+          {
+            "feature": "resume_edu",
+            "label": "resume_edu",
+            "importance": 0.005392834040144345,
+            "std": 0.0013395328396039723
+          },
+          {
+            "feature": "n_common_skills",
+            "label": "n_common_skills",
+            "importance": 0.004684062409497036,
+            "std": 0.0013234646159002831
+          },
+          {
+            "feature": "cos_lsa",
+            "label": "Similaridade temática (LSA)",
+            "importance": 0.0008583157312520795,
+            "std": 0.0009376363577175372
+          },
+          {
+            "feature": "skill_jaccard",
+            "label": "Sobreposição de habilidades",
+            "importance": 0.00012800350472499388,
+            "std": 0.0009244565792921693
+          },
+          {
+            "feature": "title_any",
+            "label": "title_any",
+            "importance": 0.0,
+            "std": 0.0
+          }
+        ],
+        "job_area_classifier_accuracy": {
+          "calibration": 0.946236559139785,
+          "validation": 0.9,
+          "test": 0.950354609929078
+        },
+        "iterations_selected_on_validation": 372
+      }
+    }
+  },
+  "limitations": [
+    "Rotulos e scores de compatibilidade sao os do dataset (heuristica ponderada); origem e validacao humana nao verificadas.",
+    "O dataset concentra currículos de TI (~85%) e as faixas dependem de um score estreito (desvio padrao ~0,04): a separacao fraca/media e intrinsecamente ruidosa.",
+    "Faixa \"forte\" e rara (<1% dos pares): a recall dessa classe e baixa e nao deve ser usada como filtro.",
+    "Area e rotulo derivado das vagas de maior nivel de match; empates entre categorias foram excluidos.",
+    "Textos identicos apos limpeza ficam juntos; duplicatas aproximadas nao sao detectadas.",
+    "Ingles; em portugues o texto e traduzido localmente (Marian) antes do ML e o desempenho nao foi validado.",
+    "Anos de experiencia sao extraidos por regras no texto; no treino usam-se as colunas do dataset, entao a extracao pode divergir.",
+    "Probabilidades de faixa vem da distribuicao empirica dos residuos (calibracao em curriculos/vagas inéditos); nao sao chance de contratacao.",
+    "OOD: percentil empirico da validacao, sem avaliacao com corpus externo OOD.",
+    "Bootstrap condicional ao modelo fixo, agrupado por vaga. Nao inclui incerteza de retreino."
+  ]
+}
